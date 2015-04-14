@@ -2,67 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85484c1e-645d-401f-bfab-51dcbcae6e4a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/._.DS_Store" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._ah.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._ahpositionsmouseover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._breakpoint.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._debugmodebreaks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._exit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._listcomp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._listiterator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._mouseoverinfo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._placingabreakpoint.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._python-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._runalbert1py.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._runningtobreakpoint.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._stepinto.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._steppingtools.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._supplies.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/images/._toprightrunarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/ah.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/ahpositionsmouseover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/breakpoint.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/cmdprompt.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/debugmodebreaks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/exit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/listcomp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/listiterator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/mouseoverinfo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/placingabreakpoint.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/pycharm-logo.tiff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/python-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/runalbert1py.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/runningtobreakpoint.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/stepinto.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/steppingtools.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/supplies.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/images/toprightrunarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/._albert1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/._albert2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/__MACOSX/1-2-python/._project.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/.idea/1-python.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/albert1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/albert2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/buyLotsOfFruit.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/foreach.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/helloWorld.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/listcomp.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/listcomp2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/project.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/quickSort.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/shop.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/shopSmart.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/shopTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/tutorial-2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/tutorial.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task1/1-2-python/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="aib.iws" />
@@ -90,8 +30,8 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.089108914" vertical-offset="0" max-vertical-offset="404">
-              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.26732674" vertical-offset="0" max-vertical-offset="404">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -406,13 +346,20 @@
       <option name="project" value="LOCAL" />
       <updated>1428961081805</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="4th commit">
+      <created>1429002618919</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1429002618919</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="100" y="110" width="1400" height="770" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -422,14 +369,13 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Thumbnails" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297546" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297546" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297546" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -454,7 +400,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="second commit" />
     <MESSAGE value="third commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="third commit" />
+    <MESSAGE value="4th commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="4th commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -487,8 +434,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.089108914" vertical-offset="0" max-vertical-offset="404">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.26732674" vertical-offset="0" max-vertical-offset="404">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
