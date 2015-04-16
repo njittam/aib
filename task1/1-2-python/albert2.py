@@ -22,7 +22,7 @@ For example given three elements A, B and C, the result is:
 def permutations(elements, current=list()):
     orders = []
     if len(elements) == 0: # if there are no more elements to add:
-        orders += current.copy() # add a copy of the current order to the list of orders
+        orders.append(current.copy()) # add a copy of the current order to the list of orders
     for i in range(len(elements)): # for each index in remaining elements, do:
         current.append(elements.pop(i)) # prepare: move the element at the index from the remaining list to the current order
         orders += permutations(elements, current) # recursively generate all following orders
