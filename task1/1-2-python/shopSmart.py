@@ -22,6 +22,7 @@ def shopSmart(orderList, fruitShops):
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
     """
+    return shopSmart2(orderList,fruitShops)
     cheapest_price = fruitShops[0].getPriceOfOrder(orderList)
     for shop in fruitShops:
         price = shop.getPriceOfOrder(orderList)
@@ -29,7 +30,14 @@ def shopSmart(orderList, fruitShops):
             cheapest_price = price
             cheapest_shop = shop
     return cheapest_shop
-    
+
+def shopSmart2(orderList, fruitShops):
+    """
+        orderList: List of (fruit, numPound) tuples
+        fruitShops: List of FruitShops
+    """
+    return [shop for shop in fruitShops if shop.getPriceOfOrder(orderList) == min([shopp.getPriceOfOrder(orderList) for shopp in fruitShops])][0]
+
 if __name__ == '__main__':
   "This code runs when you invoke the script from the command line"
   orders = [('apples',1.0), ('oranges',3.0)]
