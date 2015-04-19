@@ -29,6 +29,7 @@ def buyLotsOfFruit(orderList):
             
     Returns cost of order
     """
+    return buyLotsOfFruit2(orderList)
     totalCost = 0.0
     for item in orderList:
         if item[0] in fruitPrices:
@@ -37,10 +38,22 @@ def buyLotsOfFruit(orderList):
             return None
     return totalCost
 
+def buyLotsOfFruit2(orderList):
+    """
+        orderList: List of (fruit, numPounds) tuples
+
+    Returns cost of order
+    """
+    list = [fruitPrices[item[0]] * item[1] if item[0] in fruitPrices else None for item in orderList] #list contains the total price of every item in orderlist. None if the item isn't in fruitPrices.
+    if None in list:
+        return None         #return None if the item is not in fruitPrices
+    else:
+        return sum(list)    #return the total price if all the items are in fruitPrices
+
 # Main Method    
 if __name__ == '__main__':
     "This code runs when you invoke the script from the command line"
-    orderList = [('apples', 2.0), ('pears', 3.0), ('limes', 4.0),('test',1.0)]
+    orderList = [('apples', 2.0), ('pears', 3.0), ('limes', 4.0),]
     print('Cost of', orderList, 'is', buyLotsOfFruit(orderList))
     if len(sys.argv) == 1:
         args = input("Enter any command line arguments?")
