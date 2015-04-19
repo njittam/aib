@@ -22,7 +22,7 @@ def shopSmart(orderList, fruitShops):
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
     """
-    return shopSmart2(orderList,fruitShops)
+    return shopSmart2(orderList, fruitShops)
     cheapest_price = fruitShops[0].getPriceOfOrder(orderList)
     for shop in fruitShops:
         price = shop.getPriceOfOrder(orderList)
