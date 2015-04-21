@@ -231,7 +231,7 @@ def loadEightPuzzle(puzzleNumber):
     
     puzzleNumber can range from 0 to 5.
     
-    >>> print loadEightPuzzle(0)
+    #>>> print loadEightPuzzle(0)
     -------------
     | 1 |   | 2 |
     -------------
