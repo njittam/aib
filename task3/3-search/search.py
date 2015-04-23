@@ -67,27 +67,46 @@ def tinyMazeSearch(problem):
   w = Directions.WEST
   return  [s,s,w,s,w,w,s,w]
 
+
 def depthFirstSearch(problem):
-  """
-  Search the deepest nodes in the search tree first [p 85].
-  
-  Your search algorithm needs to return a list of actions that reaches
-  the goal.  Make sure to implement a graph search algorithm [Fig. 3.7].
-  
-  To get started, you might want to try some of these simple commands to
-  understand the search problem that is being passed in:
-  
-  print "Start:", problem.getStartState()
-  print "Is the start a goal?", problem.isGoalState(problem.getStartState())
-  print "Start's successors:", problem.getSuccessors(problem.getStartState())
-  """
-  "*** YOUR CODE HERE ***"
-  util.raiseNotDefined()
+    """
+    Search the deepest nodes in the search tree first [p 85].
+
+    Your search algorithm needs to return a list of actions that reaches
+    the goal.  Make sure to implement a graph search algorithm [Fig. 3.7].
+
+    To get started, you might want to try some of these simple commands to
+    understand the search problem that is being passed in:
+
+    print "Start:", problem.getStartState()
+    print "Is the start a goal?", problem.isGoalState(problem.getStartState())
+    print "Start's successors:", problem.getSuccessors(problem.getStartState())
+    """
+    print(problem.getStartState())
+    print(problem.isGoalState(problem.getStartState()))
+    print(problem.getSuccessors(problem.getStartState()))
+    print(problem.getCostActions([x[1] for x in problem.getSuccessors(problem.getStartState())]))
+    frontier = [(problem.getStartState(), problem.getStartState(),problem.getSuccessors(problem.getStartState())[0][1])]
+    explored = []
+    while ( True ):
+        if frontier.size() == 0:
+            return -1
+        current_node = frontier[-1]
+        frontier.pop()
+        if problem.isGoalState(current_node[0]):
+            return get_solution(current_node)
+        if not current_node[1] in explored:
+            flatten(frontier.push((triple[0], current_node[0], triple[1]) for triple in problem.getSuccessors(current_node[0])))
+            explored.push(current_node)
+    #pokemon
+
+    util.raiseNotDefined()
+
 
 def breadthFirstSearch(problem):
-  "Search the shallowest nodes in the search tree first. [p 81]"
-  "*** YOUR CODE HERE ***"
-  util.raiseNotDefined()
+    """Search the shallowest nodes in the search tree first. [p 81]"""
+
+    util.raiseNotDefined()
       
 def uniformCostSearch(problem):
   "Search the node of least total cost first. "
