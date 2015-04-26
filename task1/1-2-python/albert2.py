@@ -1,3 +1,6 @@
+# Theo Pijkeren s4481046
+# Mattijn Kreuzen s4446402
+
 import math # a built-in library containing some mathematical operations like square root
 
 '''
