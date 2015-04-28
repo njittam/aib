@@ -110,13 +110,44 @@ def depthFirstSearch(problem):
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first. [p 81]"""
+    frontier = [((problem.getStartState(),0,0), -1)]
+    explored = []
+  #  explored_size = 0
+    while ( True ):
+        if len(frontier) == 0:
+            return -1
+        current_node = frontier[0]
+        frontier.remove(frontier[0])
+        if problem.isGoalState(current_node[0][0]):
+            return get_solution(current_node, explored)
+        if current_node[0][0] not in [state[0][0] for state in explored]:
+            for triple in problem.getSuccessors(current_node[0][0]):
+                frontier.append((triple, len(explored)-1))
+            explored.append(current_node)
 
-    util.raiseNotDefined()
       
 def uniformCostSearch(problem):
-  "Search the node of least total cost first. "
-  "*** YOUR CODE HERE ***"
-  util.raiseNotDefined()
+    "Search the node of least total cost first. "
+    frontier = [((problem.getStartState(),"North",0), -1)]
+    explored = []
+    cost = 0
+    while ( True ):
+        if len(frontier) == 0:
+            return -1
+        current_node = frontier[-1]
+        frontier.remove(frontier[len(frontier) -1])
+        if problem.isGoalState(current_node[0][0]):
+            return get_solution(current_node, explored)
+        explored.append(current_node)
+        for snode in problem.getSuccessors(current_node[0][0]):
+            if snode[0] not in [state[0][0] for state in explored]:
+                if snode[0] not in [state[0][0] for state in frontier]:
+                    frontier.append((snode, len(explored)))
+                else:
+                    for node2 in [n for n in frontier if n[0][2] > snode[2]]:
+                        snode = node2
+
+
 
 def nullHeuristic(state, problem=None):
   """
