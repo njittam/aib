@@ -68,6 +68,14 @@ def tinyMazeSearch(problem):
   return  [s,s,w,s,w,w,s,w]
 
 
+def get_solution(current_node, explored):
+    solution = []
+    while (current_node[1] >= 0):
+        solution.insert(0, current_node[0][1])
+        current_node = explored[current_node[1]]
+    return solution
+
+
 def depthFirstSearch(problem):
     """
     Search the deepest nodes in the search tree first [p 85].
@@ -82,25 +90,22 @@ def depthFirstSearch(problem):
     print "Is the start a goal?", problem.isGoalState(problem.getStartState())
     print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
-    print(problem.getStartState())
-    print(problem.isGoalState(problem.getStartState()))
-    print(problem.getSuccessors(problem.getStartState()))
-    print(problem.getCostActions([x[1] for x in problem.getSuccessors(problem.getStartState())]))
-    frontier = [(problem.getStartState(), problem.getStartState(),problem.getSuccessors(problem.getStartState())[0][1])]
+
+    frontier = [((problem.getStartState(),0,0), -1)]
     explored = []
+  #  explored_size = 0
     while ( True ):
-        if frontier.size() == 0:
+        if len(frontier) == 0:
             return -1
         current_node = frontier[-1]
-        frontier.pop()
-        if problem.isGoalState(current_node[0]):
-            return get_solution(current_node)
-        if not current_node[1] in explored:
-            flatten(frontier.push((triple[0], current_node[0], triple[1]) for triple in problem.getSuccessors(current_node[0])))
-            explored.push(current_node)
-    #pokemon
-
-    util.raiseNotDefined()
+        frontier.remove(frontier[len(frontier) -1])
+        if problem.isGoalState(current_node[0][0]):
+            return get_solution(current_node, explored)
+        if current_node[0][0] not in [state[0][0] for state in explored]:
+            for triple in problem.getSuccessors(current_node[0][0]):
+                frontier.append((triple, len(explored)))
+            explored.append(current_node)
+          #  explored_size += 1
 
 
 def breadthFirstSearch(problem):
