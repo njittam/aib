@@ -45,6 +45,23 @@ class SearchProblem:
      required to get there, and 'stepCost' is the incremental 
      cost of expanding to that successor
      """
+     # Bookkeeping for display purposes
+     self._expanded += 1
+     successors = []
+     for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
+        # Add a successor state to the successor list if the action is legal
+        x,y = currentPosition
+        dx, dy = Actions.directionToVector(action)
+        nextx, nexty = int(x + dx), int(y + dy)
+        hitsWall = self.walls[nextx][nexty]
+        if not hitsWall and not ((action == Directions.NORTH and state[1] == Directions.SOUTH) or
+                                   (action == Directions.EAST and state[1] == Directions.WEST) or
+                                   (action == Directions.SOUTH and state[1] == Directions.NORTH) or
+                                   (action == Directions.WEST and state[1] == Directions.EAST)):
+            successors.append(((nextx, nexty), action, 42))  # TODO: Implement Cost PLEASE MARTIJN
+
+     return successors
+
      util.raiseNotDefined()
 
   def getCostOfActions(self, actions):
@@ -167,6 +184,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
         if frontier.isEmpty():
             return -1
         current_node = frontier.pop()
+        successors = problem.getSuccessors(current_node[0][0])
         if problem.isGoalState(current_node[0][0]):
             return get_solution(current_node, explored)
         if current_node[0][0] not in [state[0][0] for state in explored]:
