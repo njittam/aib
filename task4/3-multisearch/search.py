@@ -67,28 +67,60 @@ def tinyMazeSearch(problem):
   w = Directions.WEST
   return  [s,s,w,s,w,w,s,w]
 
+def get_solution(current_node, explored):
+    solution = []
+    while (current_node[1] >= 0):
+        solution.insert(0, current_node[0][1])
+        current_node = explored[current_node[1]]
+    return solution
+
 def depthFirstSearch(problem):
-  """
-  Search the deepest nodes in the search tree first [p 85].
+    """
+    Search the deepest nodes in the search tree first [p 85].
   
-  Your search algorithm needs to return a list of actions that reaches
-  the goal.  Make sure to implement a graph search algorithm [Fig. 3.7].
+    Your search algorithm needs to return a list of actions that reaches
+    the goal.  Make sure to implement a graph search algorithm [Fig. 3.7].
   
-  To get started, you might want to try some of these simple commands to
-  understand the search problem that is being passed in:
+    To get started, you might want to try some of these simple commands to
+    understand the search problem that is being passed in:
   
-  print "Start:", problem.getStartState()
-  print "Is the start a goal?", problem.isGoalState(problem.getStartState())
-  print "Start's successors:", problem.getSuccessors(problem.getStartState())
-  """
-  "*** YOUR CODE HERE ***"
-  util.raiseNotDefined()
+    print "Start:", problem.getStartState()
+    print "Is the start a goal?", problem.isGoalState(problem.getStartState())
+    print "Start's successors:", problem.getSuccessors(problem.getStartState())
+    """
+    current_node = ((problem.getStartState(),0,0), -1)
+    frontier = [current_node]
+    explored = []
+    while (not problem.isGoalState(current_node[0][0])):
+        if len(frontier) == 0:
+            return -1
+        current_node = frontier[-1]
+        frontier.remove(frontier[len(frontier) - 1])
+        if current_node[0][0] not in [state[0][0] for state in explored]:
+            for triple in problem.getSuccessors(current_node[0][0]):
+                frontier.append((triple, len(explored)))
+            explored.append(current_node)
+    return get_solution(current_node, explored)
 
 def breadthFirstSearch(problem):
-  "Search the shallowest nodes in the search tree first. [p 81]"
-  "*** YOUR CODE HERE ***"
-  util.raiseNotDefined()
-      
+    "Search the shallowest nodes in the search tree first. [p 81]"
+
+
+    """Search the shallowest nodes in the search tree first. [p 81]"""
+    current_node = ((problem.getStartState(),0,0), -1)
+    frontier = [current_node]
+    explored = []
+    while ( not problem.isGoalState(current_node[0][0]) ):
+        if len(frontier) == 0:
+            return -1
+        current_node = frontier[0]
+        frontier.remove(frontier[0])
+        if current_node[0][0] not in [state[0][0] for state in explored]:
+            for triple in problem.getSuccessors(current_node[0][0]):
+                frontier.append((triple, len(explored)))
+            explored.append(current_node)
+    return get_solution(current_node, explored)
+
 def uniformCostSearch(problem):
   "Search the node of least total cost first. "
   "*** YOUR CODE HERE ***"
