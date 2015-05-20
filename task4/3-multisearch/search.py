@@ -93,7 +93,7 @@ def depthFirstSearch(problem):
     explored = []
     while (not problem.isGoalState(current_node[0][0])):
         if len(frontier) == 0:
-            return -1
+            return None
         current_node = frontier[-1]
         frontier.remove(frontier[len(frontier) - 1])
         if current_node[0][0] not in [state[0][0] for state in explored]:
@@ -112,7 +112,7 @@ def breadthFirstSearch(problem):
     explored = []
     while ( not problem.isGoalState(current_node[0][0]) ):
         if len(frontier) == 0:
-            return -1
+            return None
         current_node = frontier[0]
         frontier.remove(frontier[0])
         if current_node[0][0] not in [state[0][0] for state in explored]:
