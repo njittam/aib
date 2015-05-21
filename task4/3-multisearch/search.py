@@ -115,7 +115,8 @@ def breadthFirstSearch(problem):
             return None
         current_node = frontier[0]
         frontier.remove(frontier[0])
-        if current_node[0][0] not in [state[0][0] for state in explored]:
+        boole = current_node[0][0] not in [state[0][0] for state in explored]
+        if boole:
             for triple in problem.getSuccessors(current_node[0][0]):
                 frontier.append((triple, len(explored)))
             explored.append(current_node)
@@ -133,15 +134,36 @@ def nullHeuristic(state, problem=None):
   """
   return 0
 
+
+def getTotalCost(triple, current_node, explored):
+    solution = []
+    while (current_node[1] >= 0):
+        solution.insert(0, current_node[0][2])
+        current_node = explored[current_node[1]]
+    return triple[2] + sum(solution)
+
+
 def aStarSearch(problem, heuristic=nullHeuristic):
-  "Search the node that has the lowest combined cost and heuristic first."
+    "Search the node that has the lowest combined cost and heuristic first."
 
-  "*** YOUR CODE HERE ***"
-  util.raiseNotDefined()
+    frontier = util.PriorityQueue()
+    current_node = ((problem.getStartState(),0,0), -1)
+    frontier.push(current_node, 0)
+    explored = []
+    while ( not problem.isGoalState(current_node[0][0]) ):
+        if frontier.isEmpty():
+            return -1
+        current_node = frontier.pop()
+        if current_node[0][0] not in [state[0][0] for state in explored]:
+            for triple in problem.getSuccessors(current_node[0][0]):
+                priority = getTotalCost(triple, current_node, explored) + heuristic(triple[0], problem)
+                frontier.push((triple, len(explored)), priority)
+            explored.append(current_node)
+    return get_solution(current_node, explored)
 
-  "Bonus assignment: Adjust the getSuccessors() method in CrossroadSearchAgent class"
-  "in searchAgents.py and test with:"
-  "python pacman.py -l bigMaze -z .5 -p CrossroadSearchAgent -a fn=astar,heuristic=manhattanHeuristic "
+    "Bonus assignment: Adjust the getSuccessors() method in CrossroadSearchAgent class"
+    "in searchAgents.py and test with:"
+    "python pacman.py -l bigMaze -z .5 -p CrossroadSearchAgent -a fn=astar,heuristic=manhattanHeuristic "
   
 # Abbreviations
 bfs = breadthFirstSearch
