@@ -5,86 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85484c1e-645d-401f-bfab-51dcbcae6e4a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/5-learning_html_3ce29c1a.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/5-learning_html_m7fe870ff.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/pacman_multi_agent.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/pacman_multi_agent.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/.~lock.5-learning.html#" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/.idea/4-multiagent.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/4-multiagents.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/5-learning.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/RandGhost.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/RandGhost_easy.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/RandomGhost.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/RandomGhost_easy.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/SeekerGhost.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/SeekerGhost_easy.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/TrackerGhost.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/TrackerGhost_easy.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/capsuleClassic.lay" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/classifier.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/classifiertest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/commands.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/contestClassic.lay" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/game.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/gendata.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/ghostAgents.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/graphicsDisplay.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/graphicsUtils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/keyboardAgents.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layout.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/mediumClassic.lay" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/minimaxClassic.lay" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/multiAgents.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/openClassic.lay" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/or0.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/or1.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/originalClassic.lay" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/pacman.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/pacmanAgents.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/projects.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/smallClassic.lay" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/test.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/testClassic.lay" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/textDisplay.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/train0.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/trappedClassic.lay" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/trickyClassic.lay" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/util.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task5/4-multiagent/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/xor0.data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task6/5-learning/xor1.data" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\.~lock.5-learning.html#" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\5-learning.html" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\5-learning_html_3ce29c1a.png" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\5-learning_html_m7fe870ff.png" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\RandGhost.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\RandGhost_easy.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\RandomGhost.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\RandomGhost_easy.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\SeekerGhost.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\SeekerGhost_easy.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\TrackerGhost.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\TrackerGhost_easy.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\classifier.py" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\classifiertest.py" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\gendata.sh" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\or0.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\or1.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\pacman_multi_agent.png" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\test.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\train0.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\xor0.data" afterPath="" />
-      <change type="DELETED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task5\5-learning\xor1.data" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/aib2.iml" afterPath="$PROJECT_DIR$/.idea/aib2.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task5/4-multiagent/multiAgents.py" afterPath="$PROJECT_DIR$/task5/4-multiagent/multiAgents.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="U:\Users\mkreuzen\pycharmprojects\aib22\task3\3-search\layouts\boxSearch.lay" afterPath="$PROJECT_DIR$/task5/4-multiagent/layouts/boxSearch.lay" />
     </list>
     <ignored path="aib.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,91 +32,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="search.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task4/3-multisearch/search.py">
+      <file leaf-file-name="boxSearch.lay" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/task5/4-multiagent/layouts/boxSearch.lay">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3009">
+            <state line="14" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchAgents.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task4/3-multisearch/searchAgents.py">
+      <file leaf-file-name="multiAgents.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/task5/4-multiagent/multiAgents.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13345">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bigSearch.lay" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task4/3-multisearch/layouts/bigSearch.lay">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pacmanAgents.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task4/3-multisearch/pacmanAgents.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mediumScaryMaze.lay" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task4/3-multisearch/layouts/mediumScaryMaze.lay">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="util.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task4/3-multisearch/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8517">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/task4/3-multisearch/game.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12104">
+            <state line="83" column="17" selection-start="3433" selection-end="3433" vertical-scroll-proportion="0.7402985" vertical-offset="847" max-vertical-offset="3672">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="commands.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task4/3-multisearch/commands.txt">
+        <entry file="file://$PROJECT_DIR$/task5/4-multiagent/commands.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+            <state line="1" column="17" selection-start="34" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="textDisplay.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task4/3-multisearch/textDisplay.py">
+      <file leaf-file-name="game.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/task5/4-multiagent/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
+            <state line="25" column="28" selection-start="686" selection-end="689" vertical-scroll-proportion="-8.230769" vertical-offset="160" max-vertical-offset="12053">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ghostAgents.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/task5/4-multiagent/ghostAgents.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="36" selection-start="1607" selection-end="1620" vertical-scroll-proportion="-8.230769" vertical-offset="500" max-vertical-offset="1292">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="pacman.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task4/3-multisearch/pacman.py">
+        <entry file="file://$PROJECT_DIR$/task5/4-multiagent/pacman.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11492">
+            <state line="131" column="33" selection-start="4893" selection-end="4895" vertical-scroll-proportion="-8.884615" vertical-offset="1877" max-vertical-offset="11373">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/task5/4-multiagent/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="96" column="4" selection-start="2910" selection-end="2927" vertical-scroll-proportion="-8.230769" vertical-offset="1384" max-vertical-offset="8483">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="capsuleClassic.lay" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/capsuleClassic.lay">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bigSearch.lay" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/bigSearch.lay">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="greedySearch.lay" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/greedySearch.lay">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
               <folding />
             </state>
           </provider>
@@ -214,6 +139,13 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/task5/4-multiagent/multiAgents.py" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -266,6 +198,100 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aib22" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4-multiagent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aib22" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4-multiagent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aib22" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3-search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aib22" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3-search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aib22" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -284,7 +310,12 @@
       <console-settings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.pacman (1)">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="U:\Users\mkreuzen\pycharmprojects\aib22\task5\4-multiagent\layouts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.pacman (2)">
     <configuration default="false" name="search" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -358,6 +389,26 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/task4/3-multisearch/search.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="pacman (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/task5/4-multiagent" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aib2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/task5/4-multiagent/pacman.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -522,26 +573,43 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <list size="6">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.pacman" />
       <item index="1" class="java.lang.String" itemvalue="Python.pacman (1)" />
       <item index="2" class="java.lang.String" itemvalue="Python.search" />
       <item index="3" class="java.lang.String" itemvalue="Python.game" />
       <item index="4" class="java.lang.String" itemvalue="Python.searchAgents" />
       <item index="5" class="java.lang.String" itemvalue="Python.search (1)" />
+      <item index="6" class="java.lang.String" itemvalue="Python.pacman (2)" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.search (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.game" />
-        <item index="2" class="java.lang.String" itemvalue="Python.searchAgents" />
-        <item index="3" class="java.lang.String" itemvalue="Python.search" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.pacman (2)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.search (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.game" />
+        <item index="3" class="java.lang.String" itemvalue="Python.searchAgents" />
+        <item index="4" class="java.lang.String" itemvalue="Python.search" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" myUseAcceleration="nothing">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
     <configuration useDefault="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -621,7 +689,11 @@
       <created>1432145054596</created>
       <updated>1432145054596</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add task65 files">
+      <created>1433424624620</created>
+      <updated>1433424624620</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -648,21 +720,21 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879817" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1640625" sideWeight="0.49913344" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3505618" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3505263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.196875" sideWeight="0.50086653" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.39767933" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" x="601" y="527" width="489" height="428" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24526316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="559" y="607" width="428" height="278" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24526316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="559" y="607" width="428" height="278" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32898173" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="261" y="453" width="551" height="725" />
@@ -670,29 +742,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297546" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35281146" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.39767933" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" x="601" y="527" width="489" height="428" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294271" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19453125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32898173" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="1920" y="335" width="1586" height="252" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24696803" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="559" y="607" width="428" height="278" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297546" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -722,7 +771,8 @@
     <MESSAGE value="finshed asignment 1&#10;" />
     <MESSAGE value="Finish A-star search and start with Bonus" />
     <MESSAGE value="add task4 files" />
-    <option name="LAST_COMMIT_MESSAGE" value="add task4 files" />
+    <MESSAGE value="add task65 files" />
+    <option name="LAST_COMMIT_MESSAGE" value="add task65 files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -777,6 +827,21 @@
           <line>302</line>
           <option name="timeStamp" value="187" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/task5/4-multiagent/multiAgents.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/task5/4-multiagent/multiAgents.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/task5/4-multiagent/multiAgents.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -785,136 +850,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="198" />
+      <option name="time" value="205" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/task4/3-multisearch/pacman.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/buyLotsOfFruit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/shop.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/shopSmart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/albert2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/buyLotsOfFruit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/shop.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/foreach.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/shop.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/quickSort.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task3/2-search/pacman.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/buyLotsOfFruit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/shopSmart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task1/1-2-python/albert2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task3/3-search/existingSearchAgents.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -1015,20 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task4/3-multisearch/textDisplay.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task4/3-multisearch/pacman.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task4/3-multisearch/layouts/bigSearch.lay">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -1057,13 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task4/3-multisearch/commands.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task4/3-multisearch/searchAgents.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -1074,6 +992,195 @@
     <entry file="file://$PROJECT_DIR$/task4/3-multisearch/game.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task4/3-multisearch/commands.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task4/3-multisearch/textDisplay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task4/3-multisearch/pacman.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/layouts/trappedClassic.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/layouts/openClassic.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/layouts/minimaxClassic.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/layouts/mediumClassic.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/openSearch.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/openMaze.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/openClassic.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/oddSearch.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/minimaxClassic.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/mediumSearch.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/mediumSafeSearch.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/bigSafeSearch.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/contestClassic.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/contoursMaze.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/greedySearch.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/capsuleClassic.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task3/3-search/layouts/bigSearch.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="4" selection-start="2910" selection-end="2927" vertical-scroll-proportion="-8.230769" vertical-offset="1384" max-vertical-offset="8483">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/ghostAgents.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="36" selection-start="1607" selection-end="1620" vertical-scroll-proportion="-8.230769" vertical-offset="500" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/pacman.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="33" selection-start="4893" selection-end="4895" vertical-scroll-proportion="-8.884615" vertical-offset="1877" max-vertical-offset="11373">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/layouts/boxSearch.lay">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="28" selection-start="686" selection-end="689" vertical-scroll-proportion="-8.230769" vertical-offset="160" max-vertical-offset="12053">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/commands.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="17" selection-start="34" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/4-multiagent/multiAgents.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="17" selection-start="3433" selection-end="3433" vertical-scroll-proportion="0.7402985" vertical-offset="847" max-vertical-offset="3672">
           <folding />
         </state>
       </provider>

@@ -64,11 +64,26 @@ class ReflexAgent(Agent):
     successorGameState = currentGameState.generatePacmanSuccessor(action)
     newPos = successorGameState.getPacmanPosition()
     oldFood = currentGameState.getFood()
+    newFood =  successorGameState.getFood()
     newGhostStates = successorGameState.getGhostStates()
+    foodlist = []
+    for h in range(newFood.height):
+        for w in range(newFood.width):
+            if oldFood[w][h]:
+                foodlist.append((w,h))
     newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
-
+    ghostDistance = [util.manhattanDistance(newPos, ghost.configuration.pos)for ghost in newGhostStates]
+    foodDist = [util.manhattanDistance(newPos, food)for food in foodlist]
     "*** YOUR CODE HERE ***"
-    return successorGameState.getScore()
+   # return min(ghostDistance)
+    if currentGameState.getScore() > successorGameState.getScore() and min(ghostDistance) > 2:
+        return -min (foodDist)
+    if min(ghostDistance) > 2:
+        return -min (foodDist)
+    if ghostDistance.__len__() != 0:
+        return  -100+min(ghostDistance)
+    else:
+        return  -min (foodDist)
 
 def scoreEvaluationFunction(currentGameState):
   """
@@ -137,6 +152,7 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
     """
       Returns the minimax action using self.depth and self.evaluationFunction
     """
+
     "*** YOUR CODE HERE ***"
     util.raiseNotDefined()
 
