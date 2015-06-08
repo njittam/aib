@@ -140,8 +140,72 @@ class MinimaxAgent(MultiAgentSearchAgent):
       gameState.getNumAgents():
         Returns the total number of agents in the game
     """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    a = self.minimax(gameState, True, self.depth)
+    return a[1]
+
+
+  def isTerminal (self,gameState):
+    return gameState.isWin() or gameState.isLose()
+
+
+  def minimax(self, gameState , maxi, depth):
+        if self.isTerminal(gameState) or depth == 0:
+          return (self.evaluationFunction(gameState), Directions.STOP)
+
+        childeren = util.PriorityQueue()
+        if maxi:
+          actions = gameState.getLegalActions(0)
+          for a in actions:
+            succsorGamestate = gameState.generateSuccessor(0,a)
+            child = self.minimax(succsorGamestate, not maxi, depth - 1)
+            childeren.push((child[0], a), -child[0])
+        if not maxi:
+          actionslists = []
+          for i  in range(gameState.getNumAgents() - 1):
+            actionsghost = []
+            for a in gameState.getLegalActions(i + 1):
+              actionsghost.append((a, i + 1))
+            actionslists.append(actionsghost)
+          actions = self.getSenarios(actionslists)
+          for a in actions:
+            succsorGamestate = self.getSuccessor(gameState, a)
+            child = self.minimax(succsorGamestate, not maxi, depth - 1)
+            childeren.push((child[0], a), child[0])
+        return childeren.pop()
+
+  def getSenarios(self, actionslist):
+    if actionslist == []:
+      return [[]]
+    else:
+      list = self.getSenarios(actionslist[1:])
+      list3 = []
+      #i = 0
+      for a in actionslist[0]:
+        list2 = []
+        for l in list:
+          list2.append([])
+          for item in l:
+            list2[list2.__len__() - 1].append(item)
+        for i in range(list2.__len__()):
+          list2[i].append(a)
+        for item in list2:
+          list3.append(item)
+      return list3
+
+  def getSuccessor(self, gameState, actions):
+    successor = gameState
+    for action in actions:
+      successor = successor.generateSuccessor(action[1],action[0])
+      if successor.isLose() or successor.isWin():
+        return successor
+    return successor
+
+
+
+
+
+
+
 
 class AlphaBetaAgent(MultiAgentSearchAgent):
   """
