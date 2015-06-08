@@ -1,3 +1,5 @@
+#Theo Pijkeren s4481046
+#mattijn Kreuzen s4446402
 # multiAgents.py
 # --------------
 # Licensing Information: Please do not distribute or publish solutions to this
@@ -60,6 +62,25 @@ class ReflexAgent(Agent):
     Print out these variables to see what you're getting, then combine them
     to create a masterful evaluation function.
     """
+    successorGameState = currentGameState.generatePacmanSuccessor(action)
+    Pos = successorGameState.getPacmanPosition()
+    Food = successorGameState.getFood()
+    foodlist = []
+    for h in range(Food.height):
+        for w in range(Food.width):
+            if Food[w][h]:
+                foodlist.append((w,h))
+    foodDist = [util.manhattanDistance(Pos, food)for food in foodlist]
+    foodDist.append(float("Inf"))
+    print (successorGameState.getPacmanState().getDirection())
+    if successorGameState.getPacmanState().getDirection() == Direction.East and True:
+      print(1 )
+    if successorGameState.isLose():
+      return -float("Inf")
+    if isTrapped(successorGameState):
+      return -float("Inf")
+    return successorGameState.getScore()
+
     # Useful information you can extract from a GameState (pacman.py)
     successorGameState = currentGameState.generatePacmanSuccessor(action)
     newPos = successorGameState.getPacmanPosition()
@@ -277,14 +298,56 @@ class ExpectimaxAgent(MultiAgentSearchAgent):
     util.raiseNotDefined()
 
 def betterEvaluationFunction(currentGameState):
-  """
+    """
     Your extreme ghost-hunting, pellet-nabbing, food-gobbling, unstoppable
     evaluation function for one ghost (extra credit assignment A).
 
-    DESCRIPTION: <write something here so we know what you did>
-  """
-  "*** YOUR CODE HERE ***"
-  util.raiseNotDefined()
+    the main point is to dodgee the ghost  and tr to get to the closest food. However pacman got stuck so we added a
+    little radomizer so it wouldn t always thchose the same direction
+    """
+    Pos = currentGameState.getPacmanPosition()
+    Food = currentGameState.getFood()
+    GhostStates = currentGameState.getGhostStates()
+    ghostDistance = [util.manhattanDistance(Pos, ghost.configuration.pos)for ghost in GhostStates if ghost.scaredTimer == 0]
+    scaredDistance = [util.manhattanDistance(Pos, ghost.configuration.pos)for ghost in GhostStates if ghost.scaredTimer != 0]
+    capsuleDist = [util.manhattanDistance(Pos, capsule)for capsule in currentGameState.getCapsules()]
+    foodlist = []
+    for h in range(Food.height):
+        for w in range(Food.width):
+            if Food[w][h]:
+                foodlist.append((w,h))
+    foodDist = [util.manhattanDistance(Pos, food)for food in foodlist]
+
+    if foodDist == []:
+      return float("Inf")
+    if currentGameState.isLose():
+      return -float("Inf")
+    if currentGameState.isWin():
+      return float("Inf")
+    if isTrapped(currentGameState):
+      return -float("Inf")
+    if ghostDistance == []:
+      return - min(foodDist) - min(scaredDistance) + currentGameState.getScore() - 100*len(capsuleDist)  + random.choice(range(10))
+    return - min(foodDist) + min(ghostDistance) + currentGameState.getScore() - 100*len(capsuleDist)  + random.choice(range(10))
+
+    return  min(foodDist) * currentGameState.getScore() * min(ghostDistance)
+
+def isTrapped (currentGameState):
+  pacman = currentGameState.getPacmanPosition()
+  walls_around_pacman  = 0
+  for x in range(3):
+    for y in range(3):
+      if currentGameState.getWalls()[pacman[0]-x + 1][pacman[1]- y + 1] and (x-1 ==0 or y-1 ==0):
+        walls_around_pacman += 1
+  print (walls_around_pacman)
+  print (pacman)
+ # if pacman in currentGameState.getCapsules():
+  #  return False
+  if walls_around_pacman >= 3:
+    return True
+  else:
+    return False
+
 
 # Abbreviation
 better = betterEvaluationFunction
