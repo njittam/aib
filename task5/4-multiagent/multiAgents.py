@@ -115,6 +115,36 @@ class MultiAgentSearchAgent(Agent):
     self.evaluationFunction = util.lookup(evalFn, globals())
     self.depth = int(depth)
 
+  def isTerminal (self,gameState):
+    return gameState.isWin() or gameState.isLose()
+
+  def getSenarios(self, actionslist):
+    if actionslist == []:
+      return [[]]
+    else:
+      list = self.getSenarios(actionslist[1:])
+      list3 = []
+      #i = 0
+      for a in actionslist[0]:
+        list2 = []
+        for l in list:
+          list2.append([])
+          for item in l:
+            list2[list2.__len__() - 1].append(item)
+        for i in range(list2.__len__()):
+          list2[i].append(a)
+        for item in list2:
+          list3.append(item)
+      return list3
+
+  def getSuccessor(self, gameState, actions):
+    successor = gameState
+    for action in actions:
+      successor = successor.generateSuccessor(action[1],action[0])
+      if self.isTerminal(successor):
+        return successor
+    return successor
+
 class MinimaxAgent(MultiAgentSearchAgent):
   """
     Your minimax agent for one opponent (assignment 2)
@@ -144,8 +174,7 @@ class MinimaxAgent(MultiAgentSearchAgent):
     return a[1]
 
 
-  def isTerminal (self,gameState):
-    return gameState.isWin() or gameState.isLose()
+
 
 
   def minimax(self, gameState , maxi, depth):
@@ -161,7 +190,7 @@ class MinimaxAgent(MultiAgentSearchAgent):
             childeren.push((child[0], a), -child[0])
         if not maxi:
           actionslists = []
-          for i  in range(gameState.getNumAgents() - 1):
+          for i in range(gameState.getNumAgents() - 1):
             actionsghost = []
             for a in gameState.getLegalActions(i + 1):
               actionsghost.append((a, i + 1))
@@ -173,39 +202,6 @@ class MinimaxAgent(MultiAgentSearchAgent):
             childeren.push((child[0], a), child[0])
         return childeren.pop()
 
-  def getSenarios(self, actionslist):
-    if actionslist == []:
-      return [[]]
-    else:
-      list = self.getSenarios(actionslist[1:])
-      list3 = []
-      #i = 0
-      for a in actionslist[0]:
-        list2 = []
-        for l in list:
-          list2.append([])
-          for item in l:
-            list2[list2.__len__() - 1].append(item)
-        for i in range(list2.__len__()):
-          list2[i].append(a)
-        for item in list2:
-          list3.append(item)
-      return list3
-
-  def getSuccessor(self, gameState, actions):
-    successor = gameState
-    for action in actions:
-      successor = successor.generateSuccessor(action[1],action[0])
-      if successor.isLose() or successor.isWin():
-        return successor
-    return successor
-
-
-
-
-
-
-
 
 class AlphaBetaAgent(MultiAgentSearchAgent):
   """
@@ -216,9 +212,42 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
     """
       Returns the minimax action using self.depth and self.evaluationFunction
     """
+    a = self.MinimaxAlphaBeta(gameState,True,self.depth,-float("Inf"), float("Inf"))
+    return a[1]
 
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+
+  def MinimaxAlphaBeta(self,gameState, maxi, depth, alfa, beta):
+   if self.isTerminal(gameState) or depth == 0:
+      return (self.evaluationFunction(gameState), Directions.STOP)
+   childeren = util.PriorityQueue()
+   if maxi:
+      actions = gameState.getLegalActions(0)
+      for a in actions:
+        successorGamestate = gameState.generateSuccessor(0, a)
+        child = self.MinimaxAlphaBeta(successorGamestate, not maxi, depth - 1, alfa, beta)
+        alfa = max(alfa, child[0])
+        childeren.push((child[0], a), -child[0])
+        if alfa >= beta:
+          return (alfa,child[1])
+      return (alfa,childeren.pop()[1])
+
+   if not maxi:
+        actionslists = []
+        for i in range(gameState.getNumAgents() - 1):
+          actionsghost = []
+          for a in gameState.getLegalActions(i + 1):
+            actionsghost.append((a, i + 1))
+          actionslists.append(actionsghost)
+        actions = self.getSenarios(actionslists)
+        for a in actions:
+          succsorGamestate = self.getSuccessor(gameState, a)
+          child = self.MinimaxAlphaBeta(succsorGamestate, not maxi, depth , alfa, beta)
+          beta = min(beta, child[0])
+          childeren.push((child[0], a), child[0])
+          if alfa >= beta:
+           return (beta,child[1])
+        return (beta,childeren.pop()[1])
+
 
 class MultiAlphaBetaAgent(MultiAgentSearchAgent):
   """
