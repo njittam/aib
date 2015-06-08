@@ -169,7 +169,7 @@ class MinimaxAgent(MultiAgentSearchAgent):
           actions = self.getSenarios(actionslists)
           for a in actions:
             succsorGamestate = self.getSuccessor(gameState, a)
-            child = self.minimax(succsorGamestate, not maxi, depth - 1)
+            child = self.minimax(succsorGamestate, not maxi, depth)
             childeren.push((child[0], a), child[0])
         return childeren.pop()
 
