@@ -45,6 +45,23 @@ class SearchProblem:
      required to get there, and 'stepCost' is the incremental 
      cost of expanding to that successor
      """
+     # Bookkeeping for display purposes
+     self._expanded += 1
+     successors = []
+     for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
+        # Add a successor state to the successor list if the action is legal
+        x,y = currentPosition
+        dx, dy = Actions.directionToVector(action)
+        nextx, nexty = int(x + dx), int(y + dy)
+        hitsWall = self.walls[nextx][nexty]
+        if not hitsWall and not ((action == Directions.NORTH and state[1] == Directions.SOUTH) or
+                                   (action == Directions.EAST and state[1] == Directions.WEST) or
+                                   (action == Directions.SOUTH and state[1] == Directions.NORTH) or
+                                   (action == Directions.WEST and state[1] == Directions.EAST)):
+            successors.append(((nextx, nexty), action, 42))  # TODO: Implement Cost PLEASE MARTIJN
+
+     return successors
+
      util.raiseNotDefined()
 
   def getCostOfActions(self, actions):
@@ -91,62 +108,59 @@ def depthFirstSearch(problem):
     print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
 
-    frontier = [((problem.getStartState(),0,0), -1)]
+    current_node = ((problem.getStartState(),0,0), -1)
+    frontier = [current_node]
     explored = []
-  #  explored_size = 0
-    while ( True ):
+    while (not problem.isGoalState(current_node[0][0])):
         if len(frontier) == 0:
             return -1
         current_node = frontier[-1]
-        frontier.remove(frontier[len(frontier) -1])
-        if problem.isGoalState(current_node[0][0]):
-            return get_solution(current_node, explored)
+        frontier.remove(frontier[len(frontier) - 1])
         if current_node[0][0] not in [state[0][0] for state in explored]:
             for triple in problem.getSuccessors(current_node[0][0]):
                 frontier.append((triple, len(explored)))
             explored.append(current_node)
-          #  explored_size += 1
+    return get_solution(current_node, explored)
 
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first. [p 81]"""
-    frontier = [((problem.getStartState(),0,0), -1)]
+    current_node = ((problem.getStartState(),0,0), -1)
+    frontier = [current_node]
     explored = []
-  #  explored_size = 0
-    while ( True ):
+    while ( not problem.isGoalState(current_node[0][0]) ):
         if len(frontier) == 0:
             return -1
         current_node = frontier[0]
         frontier.remove(frontier[0])
-        if problem.isGoalState(current_node[0][0]):
-            return get_solution(current_node, explored)
         if current_node[0][0] not in [state[0][0] for state in explored]:
             for triple in problem.getSuccessors(current_node[0][0]):
-                frontier.append((triple, len(explored)-1))
+                frontier.append((triple, len(explored)))
             explored.append(current_node)
+    return get_solution(current_node, explored)
 
-      
+def getTotalCost(triple, current_node, explored):
+    solution = []
+    while (current_node[1] >= 0):
+        solution.insert(0, current_node[0][2])
+        current_node = explored[current_node[1]]
+    return triple[2] + sum(solution)
+
 def uniformCostSearch(problem):
     "Search the node of least total cost first. "
-    frontier = [((problem.getStartState(),"North",0), -1)]
+    frontier = util.PriorityQueue()
+    current_node = ((problem.getStartState(),0,0), -1)
+    frontier.push(current_node, 0)
     explored = []
-    cost = 0
-    while ( True ):
-        if len(frontier) == 0:
+    while ( not problem.isGoalState(current_node[0][0]) ):
+        if frontier.isEmpty():
             return -1
-        current_node = frontier[-1]
-        frontier.remove(frontier[len(frontier) -1])
-        if problem.isGoalState(current_node[0][0]):
-            return get_solution(current_node, explored)
-        explored.append(current_node)
-        for snode in problem.getSuccessors(current_node[0][0]):
-            if snode[0] not in [state[0][0] for state in explored]:
-                if snode[0] not in [state[0][0] for state in frontier]:
-                    frontier.append((snode, len(explored)))
-                else:
-                    for node2 in [n for n in frontier if n[0][2] > snode[2]]:
-                        snode = node2
-
+        current_node = frontier.pop()
+        if current_node[0][0] not in [state[0][0] for state in explored]:
+            for triple in problem.getSuccessors(current_node[0][0]):
+                frontier.push((triple, len(explored)), triple[2])
+            explored.append(current_node)
+    return get_solution(current_node, explored)
 
 
 def nullHeuristic(state, problem=None):
@@ -157,14 +171,25 @@ def nullHeuristic(state, problem=None):
   return 0
 
 def aStarSearch(problem, heuristic=nullHeuristic):
-  "Search the node that has the lowest combined cost and heuristic first."
+    "Search the node that has the lowest combined cost and heuristic first."
+    frontier = util.PriorityQueue()
+    current_node = ((problem.getStartState(),0,0), -1)
+    frontier.push(current_node, 0)
+    explored = []
+    while ( not problem.isGoalState(current_node[0][0]) ):
+        if frontier.isEmpty():
+            return -1
+        current_node = frontier.pop()
+        if current_node[0][0] not in [state[0][0] for state in explored]:
+            for triple in problem.getSuccessors(current_node[0][0]):
+                priority = getTotalCost(triple, current_node, explored) + heuristic(triple[0], problem)
+                frontier.push((triple, len(explored)), priority)
+            explored.append(current_node)
+    return get_solution(current_node, explored)
 
-  "*** YOUR CODE HERE ***"
-  util.raiseNotDefined()
-
-  "Bonus assignment: Adjust the getSuccessors() method in CrossroadSearchAgent class"
-  "in searchAgents.py and test with:"
-  "python pacman.py -l bigMaze -z .5 -p CrossroadSearchAgent -a fn=astar,heuristic=manhattanHeuristic "
+"Bonus assignment: Adjust the getSuccessors() method in CrossroadSearchAgent class"" \
+""in searchAgents.py and test with:"
+"python pacman.py -l bigMaze -z .5 -p CrossroadSearchAgent -a fn=astar,heuristic=manhattanHeuristic "
   
 # Abbreviations
 bfs = breadthFirstSearch

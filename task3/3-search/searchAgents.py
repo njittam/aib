@@ -246,22 +246,29 @@ class CrossroadSearchAgent(SearchAgent):
      required to get there, and 'stepCost' is the incremental 
      cost of expanding to that successor
     """
-    
-    successors = []
-    for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
-      # Add a successor state to the successor list if the action is legal
-      # Here's a code snippet for figuring out whether a new position hits a wall:
-      #   x,y = currentPosition
-      #   dx, dy = Actions.directionToVector(action)
-      #   nextx, nexty = int(x + dx), int(y + dy)
-      #   hitsWall = self.walls[nextx][nexty]
-      1
-        
+
+
+
     # Bookkeeping for display purposes
     self._expanded += 1
+    successors = []
+    cost = 0
+    while successors.__sizeof__() == 1 or cost == 0:
+        successors = []
+        for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
+            # Add a successor state to the successor list if the action is legal
+            x, y = currentPosition
+            cost += 1
+            dx, dy = Actions.directionToVector(action)
+            nextx, nexty = int(x + dx), int(y + dy)
+            hitsWall = self.walls[nextx][nexty]
+            if not hitsWall and not ((action == Directions.NORTH and state[1] == Directions.SOUTH) or
+                                   (action == Directions.EAST and state[1] == Directions.WEST) or
+                                   (action == Directions.SOUTH and state[1] == Directions.NORTH) or
+                                   (action == Directions.WEST and state[1] == Directions.EAST)):
+                successors.append(((nextx, nexty), action, cost))
+            currentPosition = nextx, nexty
 
-    "*** YOUR CODE HERE ***"
-      
     return successors
 
 ##################
