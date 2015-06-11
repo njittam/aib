@@ -76,12 +76,16 @@ class ReflexAgent(Agent):
     foodDist = [util.manhattanDistance(newPos, food)for food in foodlist]
     "*** YOUR CODE HERE ***"
    # return min(ghostDistance)
-    if currentGameState.getScore() > successorGameState.getScore() and min(ghostDistance) > 2:
+    if successorGameState.isWin():
+        return float("Inf")
+    if successorGameState.isLose():
+        return -float("Inf")
+    if currentGameState.getScore() > successorGameState.getScore() and min(ghostDistance) > 5:
         return -min (foodDist)
     if min(ghostDistance) > 2:
         return -min (foodDist)
     if ghostDistance.__len__() != 0:
-        return  -100+min(ghostDistance)
+        return  -50+min(ghostDistance)
     else:
         return  -min (foodDist)
 
@@ -115,6 +119,7 @@ class MultiAgentSearchAgent(Agent):
     self.evaluationFunction = util.lookup(evalFn, globals())
     self.depth = int(depth)
 
+
 class MinimaxAgent(MultiAgentSearchAgent):
   """
     Your minimax agent for one opponent (assignment 2)
@@ -140,14 +145,95 @@ class MinimaxAgent(MultiAgentSearchAgent):
       gameState.getNumAgents():
         Returns the total number of agents in the game
     """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    def max_value(state, currentDepth):
+      currentDepth = currentDepth + 1
+      if state.isWin() or state.isLose() or currentDepth == self.depth:
+        return self.evaluationFunction(state)
+      v = float('-Inf')
+      for pAction in state.getLegalActions(0):
+        v = max(v, min_value(state.generateSuccessor(0, pAction), currentDepth, 1))
+      return v
+
+    def min_value(state, currentDepth, ghostNum):
+      if state.isWin() or state.isLose():
+        return self.evaluationFunction(state)
+      v = float('Inf')
+      for pAction in state.getLegalActions(ghostNum):
+        if ghostNum == gameState.getNumAgents() - 1:
+          v = min(v, max_value(state.generateSuccessor(ghostNum, pAction), currentDepth))
+        else:
+          v = min(v, min_value(state.generateSuccessor(ghostNum, pAction), currentDepth, ghostNum + 1))
+      return v
+
+    # Body of minimax_decision starts here: #
+    pacmanActions = gameState.getLegalActions(0)
+    maximum = float('-Inf')
+    maxAction = ''
+    for action in pacmanActions:
+      currentDepth = 0
+      currentMax = min_value(gameState.generateSuccessor(0, action), currentDepth, 1)
+      if currentMax > maximum:
+        maximum = currentMax
+        maxAction = action
+    return maxAction
+  #  a= self.minimax(gameState, self.depth, True)
+    current = gameState
+    pacman= True
+    for _ in range(self.depth):
+        for child in self.childeren(current,pacman):
+            if child[0].isWin():
+                current = child[0]
+        pacman = not pacman
+    a = self.minimax(current, self.depth, True,Directions.STOP)
+    return a[1]
+
+  def getHeuristic(self, node):
+      return node.getScore()
+
+  def childeren(self, node, pacman):
+    if pacman:
+        for action in node.getLegalActions(0):
+            yield (node.generateSuccessor(0, action), action)
+    else:
+        for action in node.getLegalActions(1):
+            yield (node.generateSuccessor(1, action),action)
+
+  def isterminal(self,gameState):
+      return  gameState.isWin()
+
+  def minimax(self, node, depth, maximizingPlayer, action):
+    if depth == 0 or node is self.isterminal(node):
+        return (self.getHeuristic(node),action)
+    if maximizingPlayer:
+        bestValue = -float("Inf")
+        bestChild = (node,Directions.STOP)
+        for child in self.childeren(node,maximizingPlayer):
+            val = self.minimax(child[0], depth - 1, False, child[1])
+            b_old = bestValue
+            bestValue = max(bestValue, val[0])
+            if b_old != bestValue:
+                bestChild = child
+        return (bestValue,bestChild[1])
+    else:
+        bestValue = float("inf")
+        bestChild = (node,Directions.STOP)
+        for child in self.childeren(node,maximizingPlayer  ):
+            val = self.minimax(child[0], depth - 1, True,child[1])
+            b_old = bestValue
+            bestValue = min(bestValue, val[0])
+            if b_old != bestValue:
+                bestChild = child
+        return (bestValue,bestChild[1])
+
+
+
+
+
 
 class AlphaBetaAgent(MultiAgentSearchAgent):
   """
     Your minimax agent with alpha-beta pruning for one ghost (assignment 3)
   """
-
   def getAction(self, gameState):
     """
       Returns the minimax action using self.depth and self.evaluationFunction
