@@ -171,19 +171,116 @@ class MyPacmanAgent(CompetitionAgent):
 
   # The following functions have been declared for you,
   # but they don't do anything yet (getAction), or work very poorly (evaluationFunction)
-  
+
   def getAction(self, gameState):
     """
     getAction chooses among the best options according to the evaluation function.
     Just like in the previous projects, getAction takes a GameState and returns
     some Directions.X for some X in the set {North, South, West, East, Stop}. 
     """
-    util.raiseNotDefined()
+    self.depth = 2
+    a = self.minimax(gameState, True, self.depth)
+    return a[1]
+
+  def isTrapped (self, currentGameState):
+    pacman = currentGameState.getPacmanPosition()
+    walls_around_pacman  = 0
+    for x in range(3):
+      for y in range(3):
+        if currentGameState.getWalls()[pacman[0]-x + 1][pacman[1]- y + 1] and (x-1 ==0 or y-1 ==0):
+          walls_around_pacman += 1
+    if walls_around_pacman >= 3:
+      return True
+    else:
+      return False
+
+  def isTerminal (self,gameState):
+    return gameState.isWin() or gameState.isLose()
+
+  def getSenarios(self, actionslist):
+    if actionslist == []:
+      return [[]]
+    else:
+      list = self.getSenarios(actionslist[1:])
+      list3 = []
+      #i = 0
+      for a in actionslist[0]:
+        list2 = []
+        for l in list:
+          list2.append([])
+          for item in l:
+            list2[list2.__len__() - 1].append(item)
+        for i in range(list2.__len__()):
+          list2[i].append(a)
+        for item in list2:
+          list3.append(item)
+      return list3
+
+  def getSuccessor(self, gameState, actions):
+    successor = gameState
+    for action in actions:
+      successor = successor.generateSuccessor(action[1],action[0])
+      if self.isTerminal(successor):
+        return successor
+    return successor
+
+  def minimax(self, gameState , maxi, depth):
+        if self.isTerminal(gameState) or depth == 0:
+          return (self.evaluationFunction(gameState), Directions.STOP)
+
+        childeren = util.PriorityQueue()
+        if maxi:
+          actions = gameState.getLegalActions(0)
+          for a in actions:
+            succsorGamestate = gameState.generateSuccessor(0,a)
+            child = self.minimax(succsorGamestate, not maxi, depth - 1)
+            childeren.push((child[0], a), -child[0])
+        if not maxi:
+          actionslists = []
+          for i in range(gameState.getNumAgents() - 1):
+            actionsghost = []
+            for a in gameState.getLegalActions(i + 1):
+              actionsghost.append((a, i + 1))
+            actionslists.append(actionsghost)
+          actions = self.getSenarios(actionslists)
+          for a in actions:
+            succsorGamestate = self.getSuccessor(gameState, a)
+            child = self.minimax(succsorGamestate, not maxi, depth)
+            childeren.push((child[0], a), child[0])
+        return childeren.pop()
 
   def evaluationFunction(self, state):
     """
     A very poor evsaluation function. You can do better!
-    """ 
-    return state.getScore()
+    """
+    #print ("test")
+    currentGameState = state
+    Pos = currentGameState.getPacmanPosition()
+    Food = currentGameState.getFood()
+    GhostStates = currentGameState.getGhostStates()
+    ghostDistance = [util.manhattanDistance(Pos, ghost.configuration.pos)for ghost in GhostStates if ghost.scaredTimer == 0]
+    scaredDistance = [util.manhattanDistance(Pos, ghost.configuration.pos)for ghost in GhostStates if ghost.scaredTimer != 0]
+    capsuleDist = [util.manhattanDistance(Pos, capsule)for capsule in currentGameState.getCapsules()]
+    foodlist = []
+    for h in range(Food.height):
+        for w in range(Food.width):
+            if Food[w][h]:
+                foodlist.append((w,h))
+    foodDist = [util.manhattanDistance(Pos, food)for food in foodlist]
 
-MyPacmanAgent=BaselineAgent
+    if foodDist == []:
+      return float("Inf")
+    if currentGameState.isLose():
+      return -float("Inf")
+    if currentGameState.isWin():
+      return 100000000
+  #  return -min(ghostDistance) - random.choice(range(4))
+    if self.isTrapped(currentGameState):
+      return -float("Inf")
+    if ghostDistance == []:
+      return - min(foodDist) - min(scaredDistance) + currentGameState.getScore() - 100*len(capsuleDist)  + random.choice(range(10))
+    return - min(foodDist) + min(ghostDistance) + currentGameState.getScore() - 100*len(capsuleDist)  + random.choice(range(10))
+
+    return  min(foodDist) * currentGameState.getScore() * min(ghostDistance)
+
+#MyPacmanAgent=BaselineAgent

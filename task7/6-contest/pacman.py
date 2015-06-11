@@ -711,7 +711,7 @@ def runGames( layouts, pacman, ghosts, display, numGames, record, catchException
       scores = [game.state.getScore() for game in laygames]
       timeouts = [game.state.getTimeout() for game in laygames]
       moves  = [game.numMoves for game in laygames]
-      times  = [laygames[i].totalAgentTimes[0]/float(moves[i]) for i in range(len(laygames))]
+      times  = [laygames[i].totalAgentTimes[0]/(float(moves[i])+.0001) for i in range(len(laygames))]
       wins = [game.state.isWin() for game in laygames]
       winRate = wins.count(True)/ float(len(wins))
       print('Average Score:', sum(scores) / float(len(scores)))
