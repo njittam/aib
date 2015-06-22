@@ -10,7 +10,10 @@ from util import manhattanDistance, nearestPoint
 from game import Directions, Agent
 import random, util
 import distanceCalculator
-
+import math
+def get_tunnels(layout):
+    print (layout)
+    return
 class CompetitionAgent(Agent):
   """
   A base class for competition agents.  The convenience methods herein handle
@@ -57,7 +60,17 @@ class CompetitionAgent(Agent):
     self.distancer.getDistance(p1, p2)
     """
     self.distancer = distanceCalculator.Distancer(gameState.data.layout)
-    
+    self.distancer.getMazeDistances()
+    get_tunnels(gameState.data.layout)
+    Food = gameState.getFood()
+    self.foodlist = []
+    for h in range(Food.height):
+            for w in range(Food.width):
+              if Food[w][h]:
+                self.foodlist.append((w, h))
+    foods = [(self.distancer.getDistance(gameState.getPacmanPosition(), food),food) for food in self.foodlist]
+    closefoods = [f[1] for f in foods if f[0] == min(food[0] for food in foods)]
+    self.nextfood = closefoods[random.choice(range(closefoods.__len__()))]
     # comment this out to forgo maze distance computation and use manhattan distances
     # self.distancer.getMazeDistances()
     
@@ -180,6 +193,53 @@ class MyPacmanAgent(CompetitionAgent):
     """
     self.depth = 2
     a = self.minimax(gameState, True, self.depth)
+    #if a[1] == Directions.STOP:
+    #    for action in gameState.getLegalActions(0):
+    #        if gameState.generateSuccessor(0,action).getScore() > gameState.getScore():
+    #            return action
+    #if a[1] == Directions.STOP:
+    #    return gameState.getLegalActions()[random.choice(range(gameState.getLegalActions().__len__()))]
+    #print (a)
+    return a[1]
+
+    GhostStates = gameState.getGhostStates()
+#    ghostDistance = [self.distancer.getDistance(Pos, ghost.configuration.pos)for ghost in GhostStates]
+    for action in gameState.getLegalActions(0):
+        if gameState.generateSuccessor(0,action).isWin():
+            return action
+    Food = gameState.getFood()
+    foodlist = []
+    for h in range(Food.height):
+            for w in range(Food.width):
+              if Food[w][h]:
+                foodlist.append((w, h))
+    foodDists = []
+    for action in gameState.getLegalActions(0):
+        successor = gameState.generateSuccessor(0,action)
+        Pos = successor.getPacmanPosition()
+        ghostDistance = [self.distancer.getDistance(Pos, ghost.configuration.pos)for ghost in GhostStates]
+        if min (ghostDistance) > 1 and action != Directions.STOP:
+            if Pos in foodlist:
+                foodDists.append((action, 0))
+            else:
+                foodDists.append((action, self.distancer.getDistance(Pos, self.nextfood)))
+    if foodDists == []:
+        return Directions.STOP
+    t = [a for a in foodDists if a[1] == min(Fod[1] for Fod in foodDists)]
+    i = random.choice(range(t.__len__()))
+    #print (t[i], t)
+    if t[i][1] == 0:
+        for h in range(Food.height):
+            for w in range(Food.width):
+              if Food[w][h]:
+                self.foodlist.append((w, h))
+        foods = [(self.distancer.getDistance(Pos, food),food) for food in foodlist]
+        closefoods = [f[1] for f in foods if f[0] == min(food[0] for food in foods)]
+        self.nextfood = closefoods[random.choice(range(closefoods.__len__()))]
+       # print(self.nextfood)
+    return t[i][0]
+    foodDist = [self.distancer.getDistance(Pos, food)for food in foodlist]
+    a = self.minimax(gameState, True, self.depth)
     return a[1]
 
   def isTrapped (self, currentGameState):
@@ -194,14 +254,16 @@ class MyPacmanAgent(CompetitionAgent):
     else:
       return False
 
+
   def isTerminal (self,gameState):
     return gameState.isWin() or gameState.isLose()
 
+
   def getSenarios(self, actionslist):
-    if actionslist == []:
-      return [[]]
-    else:
-      list = self.getSenarios(actionslist[1:])
+      if actionslist == []:
+        return [[]]
+      else:
+        list = self.getSenarios(actionslist[1:])
       list3 = []
       #i = 0
       for a in actionslist[0]:
@@ -227,14 +289,16 @@ class MyPacmanAgent(CompetitionAgent):
   def minimax(self, gameState , maxi, depth):
         if self.isTerminal(gameState) or depth == 0:
           return (self.evaluationFunction(gameState), Directions.STOP)
-
+        temp = []
         childeren = util.PriorityQueue()
         if maxi:
           actions = gameState.getLegalActions(0)
           for a in actions:
-            succsorGamestate = gameState.generateSuccessor(0,a)
-            child = self.minimax(succsorGamestate, not maxi, depth - 1)
-            childeren.push((child[0], a), -child[0])
+              if not a == Directions.STOP:
+                succsorGamestate = gameState.generateSuccessor(0,a)
+                child = self.minimax(succsorGamestate, not maxi, depth - 1)
+                temp.append((child,a))
+                childeren.push((child[0], a), -child[0])
         if not maxi:
           actionslists = []
           for i in range(gameState.getNumAgents() - 1):
@@ -246,41 +310,51 @@ class MyPacmanAgent(CompetitionAgent):
           for a in actions:
             succsorGamestate = self.getSuccessor(gameState, a)
             child = self.minimax(succsorGamestate, not maxi, depth)
+            temp.append((child,a))
             childeren.push((child[0], a), child[0])
+      #  if depth == self.depth:
+           # print (temp)
         return childeren.pop()
 
   def evaluationFunction(self, state):
     """
     A very poor evsaluation function. You can do better!
     """
-    #print ("test")
+   #
+    return state.getScore()
     currentGameState = state
     Pos = currentGameState.getPacmanPosition()
     Food = currentGameState.getFood()
     GhostStates = currentGameState.getGhostStates()
-    ghostDistance = [util.manhattanDistance(Pos, ghost.configuration.pos)for ghost in GhostStates if ghost.scaredTimer == 0]
-    scaredDistance = [util.manhattanDistance(Pos, ghost.configuration.pos)for ghost in GhostStates if ghost.scaredTimer != 0]
-    capsuleDist = [util.manhattanDistance(Pos, capsule)for capsule in currentGameState.getCapsules()]
+
+    ghostDistance = [self.distancer.getDistance(Pos, ghost.configuration.pos)for ghost in GhostStates if ghost.scaredTimer == 0]
+    scaredDistance = [self.distancer.getDistance(Pos, ghost.configuration.pos)for ghost in GhostStates if ghost.scaredTimer != 0]
+    capsuleDist = [self.distancer.getDistance(Pos, capsule)for capsule in currentGameState.getCapsules()]
     foodlist = []
     for h in range(Food.height):
         for w in range(Food.width):
             if Food[w][h]:
                 foodlist.append((w,h))
-    foodDist = [util.manhattanDistance(Pos, food)for food in foodlist]
-
+    foodDist = [self.distancer.getDistance(Pos, food)for food in foodlist]
     if foodDist == []:
-      return float("Inf")
+        return float("Inf")
     if currentGameState.isLose():
-      return -float("Inf")
+        return -float("Inf")
     if currentGameState.isWin():
-      return 100000000
+        return float("Inf")
+    #return currentGameState.getScore()
   #  return -min(ghostDistance) - random.choice(range(4))
     if self.isTrapped(currentGameState):
       return -float("Inf")
+    if ghostDistance == [] and scaredDistance == []:
+        value = 1/(min(foodDist)+1)
+        return (value)*0.1 + random.choice(range(round(value)+1))
     if ghostDistance == []:
-      return - min(foodDist) - min(scaredDistance) + currentGameState.getScore() - 100*len(capsuleDist)  + random.choice(range(10))
-    return - min(foodDist) + min(ghostDistance) + currentGameState.getScore() - 100*len(capsuleDist)  + random.choice(range(10))
+      return min(foodDist) - 2 * min(scaredDistance) + currentGameState.getScore() - 100*len(capsuleDist) + random.choice(range(20))
+    return -2* min(foodDist) + min(ghostDistance) + currentGameState.getScore() - 100*len(capsuleDist)  + random.choice(range(min(foodDist)))
+    value = min(ghostDistance)/(min(foodDist)+1)
+    return (value)*0.1 + random.choice(range(round(value)+1))
 
-    return  min(foodDist) * currentGameState.getScore() * min(ghostDistance)
 
 #MyPacmanAgent=BaselineAgent
+Pacman = MyPacmanAgent

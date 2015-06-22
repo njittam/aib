@@ -54,11 +54,31 @@ class BinaryClassifier:
             err=classification_error(labels,self.test(data))
             print("%d) error rate = %f" % (cycle,err))
 
+    def dot_product(self,values, weights):
+        return sum(value * weight for value, weight in zip(values, weights))
+
     def output(self,example):
         """ generate a prediction for a single example """
 
         "*** YOUR CODE HERE (assignment 1) ***"
-        return 0
+        training_set= [(tuple(example),1)]
+        threshold = 0.5
+        learning_rate = 0.1
+        weights = [0, 0, 0]
+        while True:
+            #print('-' * 60)
+            error_count = 0
+            for input_vector, desired_output in training_set:
+             # print(weights)
+              result = self.dot_product(input_vector, weights) > threshold
+              error = desired_output - result
+              if error != 0:
+                   error_count += 1
+                   for index, value in enumerate(input_vector):
+                      weights[index] += learning_rate * error * value
+              if error_count == 0:
+               break
+            return 0
 
     def test(self,examples):
         """ generate a prediction for each of the input examples """
