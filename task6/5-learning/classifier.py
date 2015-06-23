@@ -61,7 +61,7 @@ class BinaryClassifier:
         """ generate a prediction for a single example """
 
         "*** YOUR CODE HERE (assignment 1) ***"
-        training_set= [(tuple(example),1)]
+        training_set= [(tuple(example), 1)]
         threshold = 0.5
         learning_rate = 0.1
         weights = [0, 0, 0]
@@ -69,7 +69,7 @@ class BinaryClassifier:
             #print('-' * 60)
             error_count = 0
             for input_vector, desired_output in training_set:
-             # print(weights)
+              # print(weights)
               result = self.dot_product(input_vector, weights) > threshold
               error = desired_output - result
               if error != 0:
@@ -129,6 +129,10 @@ class MultiClassClassifier:
         """
 
         "*** YOUR CODE HERE (Bonus Assignment) ***"
+        tile = 1
+        explored = [1, 0]
+        if True and tile not in explored:
+            tile = tile + 1
 
     def train(self,data,labels):
         """ 

@@ -12,6 +12,8 @@ import random
 import util
 import distanceCalculator
 import math
+
+
 class SeekerClassifier:
     def __init__(self):
         util.raiseNotDefined()
@@ -22,13 +24,17 @@ class Corridors:
         self.layout = layout
 
     def compute_corridors(self):
+        # returns a list with tuples(entrance,exit,list_with_coords)
+        # if a corredor is a dead a dead end the exit is (-1,-1)
+        # an entrance or a exit has more than 3 legal actions including STOP
+
         # print (layout.walls.data)
         layout_data = self.layout.walls.data
         explored = []
         for h in range(layout.height):
-            for w in range(layout.width):
+            for w in (x for x in range(layout.width)if x == x):
                 if layout_data[h][w]:
-                    explored.append((h,w))
+                    explored.append((h, w))
                 else:
                     legal_actions()
         return
@@ -46,30 +52,30 @@ class CompetitionAgent(Agent):
     #############################
 
     def __init__( self, index=0, timeForComputing = .1 ):
-      """
-      Lists several variables you can query:
-      self.index = index for this agent
-      self.distancer = distance calculator (contest code provides this)
-      self.timeForComputing = an amount of time to give each turn for computing maze distances
+        """
+        Lists several variables you can query:
+        self.index = index for this agent
+        self.distancer = distance calculator (contest code provides this)
+        self.timeForComputing = an amount of time to give each turn for computing maze distances
           (part of the provided distance calculator)
-      """
-    # Agent index for querying state, N.B. pacman is always agent 0
-    self.index = index
+        """
+        # Agent index for querying state, N.B. pacman is always agent 0
+        self.index = index
 
-    # Maze distance calculator
-    self.distancer = None
+        # Maze distance calculator
+        self.distancer = None
 
-    # Time to spend each turn on computing maze distances
-    self.timeForComputing = timeForComputing
+        # Time to spend each turn on computing maze distances
+        self.timeForComputing = timeForComputing
 
-    # Access to the graphics
-    self.display = None
+        # Access to the graphics
+        self.display = None
 
-    # useful function to find functions you've defined elsewhere..
-    # self.usefulFunction = util.lookup(usefulFn, globals())
-    self.getDistance = self.distancer.getDistance
-    self.next_food = None
-    self.food_list = []
+        # useful function to find functions you've defined elsewhere..
+        # self.usefulFunction = util.lookup(usefulFn, globals())
+        self.getDistance = self.distancer.getDistance
+        self.next_food = None
+        self.food_list = []
 
     def registerInitialState(self, game_state):
         """
