@@ -354,7 +354,7 @@ class MyPacmanAgent(CompetitionAgent):
             prevstate.getGhostStates() if ghost.scaredTimer != 0].__len__():
             scared_distance.append(0) # if pacman is on a scared ghost then the distance is 0
         if min(ghost_distance) < 2: # a ghost is dangeriously close to pacman.
-            return -10001 # pacman FLEE!!
+            return -100042 # pacman FLEE!! (and of course 42)
         if not food_distance: # similar to isWin
             return float("inf")
         
