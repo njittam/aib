@@ -308,47 +308,19 @@ class MyPacmanAgent(CompetitionAgent):
         some Directions.X for some X in the set {North, South, West, East, Stop}.
         """
         evaluation_scores = [
-            (action, self.evaluationFunction2(game_state, game_state.generatePacmanSuccessor(action), action)) for
+            (action, self.evaluationFunction(game_state, game_state.generatePacmanSuccessor(action), action)) for
             action in game_state.getLegalActions(0)]
         best_actions = [action[0] for action in evaluation_scores if
                         action[1] == max([score[1] for score in evaluation_scores])]
-        # print ((game_state.getPacmanPosition(),evaluation_scores, best_actions))
         return best_actions[random.choice(range(best_actions.__len__()))]
 
-    def evaluationFunction(self, state):
+    def evaluationFunction(self, prevstate, state, action):
         """
         A very poor evsaluation function. You can do better!
         """
-        pacman_pos = state.getPacmanPosition()
-        food = state.getFood()
-        ghost_states = state.getGhostStates()
-        ghost_distance = [self.get_distance(pacman_pos, ghost.configuration.pos) for ghost in ghost_states if
-                          ghost.scaredTimer == 0]
-        scared_distance = [self.get_distance(pacman_pos, ghost.configuration.pos) for ghost in ghost_states if
-                           ghost.scaredTimer != 0]
-        capsule_distance = [self.get_distance(pacman_pos, capsule) for capsule in state.getCapsules()]
-        food_list = []
-
-        for h in range(food.height):
-            for w in range(food.width):
-                if food[w][h]:
-                    food_list.append((w, h))
-        food_distance = [self.get_distance(pacman_pos, food) for food in food_list]
-        if state.hasFood(pacman_pos[0], pacman_pos[1]):
-            food_distance.append(0)
-        if not ghost_distance:
-            ghost_distance.append(float("inf"))
-
-        if min(ghost_distance) < 2:
-            return -float("inf")
-        if not food_distance:
-            return float("inf")
-        return state.getScore() - min(food_distance)
-
-    def evaluationFunction2(self, prevstate, state, action):
-        """
-        A very poor evsaluation function. You can do better!
-        """
+        stop_value = 0
+        if action == Directions.STOP: # give the Stop Action a lower evaluation function
+            stop_value = 20
         currentgamestate = state
         pacman_pos = currentgamestate.getPacmanPosition()
         food = currentgamestate.getFood()
@@ -375,32 +347,29 @@ class MyPacmanAgent(CompetitionAgent):
         if not capsule_distance or currentgamestate.getCapsules().__len__() < prevstate.getCapsules().__len__():
             capsule_distance.append(0)
             scared_distance.append(0)
-        # print ((scared_distance,not scared_distance))
-        #if scared_distance:
-        #    capsule_distance = [-capsule for capsule in capsule_distance]
         if not scared_distance or scared_distance.__len__() < [
             self.distancer.getDistance(prevstate.getPacmanPosition(), ghost.configuration.pos) for ghost in
             prevstate.getGhostStates() if ghost.scaredTimer != 0].__len__():
             scared_distance.append(0)
         if min(ghost_distance) < 2:
-            return -float("inf")
+            return -10001
         if not food_distance:
             return float("inf")
         if prevstate.getCapsules().__len__() > state.getCapsules().__len__():
-            return float("inf")
+            if [self.distancer.getDistance(pacman_pos, ghost.configuration.pos) for ghost in prevstate.getGhostStates() if
+                           ghost.scaredTimer != 0]:
+                return -1000 - stop_value
+            else:
+                return float("inf")
         if escape_through_exit_from_ghosts:
-            entrance = ghost_escapes[0][0][1]
-            entry = ghost_escapes[0][1][1]
             a = [entrance for (entrance, entry) in escape_through_exit_from_ghosts if not entrance] and True
             b = [entry for (entrance, entry) in escape_through_exit_from_ghosts if not entry] and True
-            if  a and  b and not self.corridors.is_corridor(prevstate.getPacmanPosition()):
-                return -float("inf")
-            #if a and entry[0] >= 0:
-            #    return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - self.get_distance(entry, pacman_pos)
-            #elif b and entrance[0] >= 0:
-            #    return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - self.get_distance(entrance, pacman_pos)
-        #print ((prevstate.getPacmanPosition(), - min(food_distance)  -10* min(capsule_distance) - 20*min(scared_distance),action,(min(food_distance),min(capsule_distance),min(scared_distance),state.getScore())))
-        return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore()
+            if a and b and not self.corridors.is_corridor(prevstate.getPacmanPosition()):
+                return -10000 - stop_value
+            if not a and not b:
+                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - stop_value + get_out_of_corridor_value
+                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - 2*self.get_distance(entrance, pacman_pos) - stop_value+ get_out_of_corridor_value
+        return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - stop_value + get_out_of_corridor_value
 
 
 # MyPacmanAgent=BaselineAgent
