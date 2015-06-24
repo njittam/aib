@@ -1,3 +1,6 @@
+# Theo Pijkeren -s4481046
+# Mattijn Kreuzen -s4446402
+
 # multiAgents.py
 # --------------
 # Licensing Information: Please do not distribute or publish solutions to this
@@ -321,6 +324,7 @@ class MyPacmanAgent(CompetitionAgent):
             stop_value = 20
         pacman_pos = next_state.getPacmanPosition()
         food = next_state.getFood()
+
         # create some usefull lists
         ghost_states = next_state.getGhostStates()
         ghost_distance = [self.distancer.getDistance(pacman_pos, ghost.configuration.pos) for ghost in ghost_states if
@@ -337,21 +341,21 @@ class MyPacmanAgent(CompetitionAgent):
                 if food[w][h]:
                     food_list.append((w, h))
         food_distance = [self.distancer.getDistance(pacman_pos, food) for food in food_list] # a list with all the distances between pacman and the foods
+
         # some fixing in the lists.
         if prevstate.getScore() < next_state.getScore(): # if pacman is on food the minimum distance is 0
             food_distance.append(0)
-        if not ghost_distance: 
+        if not ghost_distance:  # if there are no ghosts then add a fictional ghost.
             ghost_distance.append(float("inf"))
-        if not capsule_distance or next_state.getCapsules().__len__() < prevstate.getCapsules().__len__():
+        if not capsule_distance or next_state.getCapsules().__len__() < prevstate.getCapsules().__len__(): # if pacman is on a capsule then a distance is 0
             capsule_distance.append(0)
-            scared_distance.append(0)
         if not scared_distance or scared_distance.__len__() < [
             self.distancer.getDistance(prevstate.getPacmanPosition(), ghost.configuration.pos) for ghost in
             prevstate.getGhostStates() if ghost.scaredTimer != 0].__len__():
-            scared_distance.append(0)
-        if min(ghost_distance) < 2:
-            return -10001
-        if not food_distance: # similar to is win
+            scared_distance.append(0) # if pacman is on a scared ghost then the distance is 0
+        if min(ghost_distance) < 2: # a ghost is dangeriously close to pacman.
+            return -10001 # pacman FLEE!!
+        if not food_distance: # similar to isWin
             return float("inf")
         
         # the actual function
@@ -367,9 +371,8 @@ class MyPacmanAgent(CompetitionAgent):
             if entrance_not_safe and entry_not_safe and not self.corridors.is_corridor(prevstate.getPacmanPosition()):
                 return -10000 - stop_value  # if it isn't saf don't go there pacman.
             if not entrance_not_safe and not entry_not_safe:
-                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + next_state.getScore() - stop_value
-                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + next_state.getScore() - 2 * self.get_distance(entrance, pacman_pos) - stop_value+ get_out_of_corridor_value
-        return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + next_state.getScore() - stop_value
+                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + next_state.getScore() - stop_value # if it is safe then do this evaluationfunction
+        return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + next_state.getScore() - stop_value # if it is safe then do this evaluationfunction
 
 
 # MyPacmanAgent=BaselineAgent
