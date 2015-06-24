@@ -20,24 +20,92 @@ class SeekerClassifier:
 
 
 class Corridors:
-    def __init__(self, layout):
+  def __init__(self, layout):
         self.layout = layout
 
-    def compute_corridors(self):
-        # returns a list with tuples(entrance,exit,list_with_coords)
-        # if a corredor is a dead a dead end the exit is (-1,-1)
-        # an entrance or a exit has more than 3 legal actions including STOP
+  def get_things():
+    returnlist = []
+    for w in range(layout.width):
+	    for h in range(layout.heigth):
+		    if !layoutdata[w][h] and is_corridor(layoutdata, w, h) and layoutdata[w][h] not in explored:
+			    entrance, lasttile = goto_entrance(layoutdata, w, h)
+			    coridorlist, exit = goto_exit(layoutdata, entrance, lasttile)
+			    for each in coridorlist
+				    explored.append(each)
+			    returnlist.append((entrance, coridorlist, exit))
+    return returnlist
 
-        # print (layout.walls.data)
-        layout_data = self.layout.walls.data
-        explored = []
-        for h in range(layout.height):
-            for w in (x for x in range(layout.width)if x == x):
-                if layout_data[h][w]:
-                    explored.append((h, w))
+  def is_corridor(self, layoutdata, w, h):
+    walls_around_tile = 0
+    if layoutdata[w][h+1]: walls_around_tile += 1
+    if layoutdata[w+1][h]: walls_around_tile += 1
+    if layoutdata[w][h-1]: walls_around_tile += 1
+    if layoutdata[w-1][h]: walls_around_tile += 1
+    return walls_around_tile < 3
+
+    def goto_entrance(self, layout, w, h):
+        visited = []
+        while True:
+            if !layout[w][h+1] and (layout[w][h+1] not in visited):
+                if self.is_corridor(layout, w, h+1):
+                    h += 1
+                    visited.append(layout, w, h+1)
                 else:
-                    legal_actions()
-        return
+                    return (w,h+1),(w,h)
+            elif !layout[w+1][h] and layout[w][h+1] not in visited:
+                if self.is_corridor(layout, w+1, h):
+                    w += 1
+                    visited.append(layout[w][h+1])
+                else:
+                    return (w+1,h),(w,h)
+            else if !layout[w][h-1] and layout[w][h+1] not in visited:
+                if self.is_corridor(layout, w, h-1):
+                    h -= 1
+                    visited.append(layout[w][h+1])
+                else:
+                    return (w,h-1),(w,h)
+            else if !layout[w-1][h] and layout[w][h+1] not in visited:
+                if self.is_corridor(layout, w-1, h):
+                    w -= 1
+                    visited.append(layout[w][h+1])
+                else:
+                    return (w-1,h),(w,h)
+
+
+  def goto_exit(self,layoutdata, entrance, lasttile):
+    visited = []
+    coridorlist = []
+    visted.append(layoutdata[entrance[0]][entrance[1]])
+    while (true):
+        if !layoutdata[w][h+1] and layoutdata[w][h+1] not in visited:
+            if corridor(layoutdata, w, h+1):
+                h += 1
+                coridorlist.append((w,h))
+                visited.append(layoutdata, w, h+1)
+            else:
+                return coridorlist,(w,h+1)
+        else if !layoutdata[w+1][h] and layoutdata[w][h+1] not in visited:
+            if corridor(layoutdata, w+1, h):
+                w += 1
+                coridorlist.append((w,h))
+                visited.append(layoutdata[w][h+1])
+            else:
+                return coridorlist,(w+1,h)
+        else if !layoutdata[w][h-1] and layoutdata[w][h+1] not in visited:
+            if corridor(layoutdata, w, h-1):
+                h -= 1
+                coridorlist.append((w,h))
+                visited.append(layoutdata[w][h+1])
+            else:
+                return coridorlist,(w,h-1)
+        else if !layoutdata[w-1][h] and layoutdata[w][h+1] not in visited:
+            if corridor(layoutdata, w-1, h):
+                w -= 1
+                coridorlist.append((w,h))
+                visited.append(layoutdata[w][h+1])
+            else:
+                return coridorlist,(w-1,h)
+
 
 class CompetitionAgent(Agent):
     """
