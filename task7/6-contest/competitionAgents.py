@@ -20,96 +20,102 @@ class SeekerClassifier:
 
 
 class Corridors:
-    def __init__(self, layout):
-        self.layout = layout
+    def __init__(self, walls, distancer):
+        self.walls = walls
         self.explored = []
         self.corridors = []
+        self.distancer = distancer
+        self.getDistance = self.distancer.getDistance
+
+    def time_to_get_out_corridor(self, pacman, ghost):
+        "returns true if pacman can escape from a ghost through an entrance or exit"
+        temp = [(entrance, entry) for (entrance, corridors, entry) in self.corridors if pacman in corridors]
+        if not temp:
+            return (True, (-2, -2)), (True, (-2, -2)), False
+        (entrance, entry) = temp[0]
+        if entrance == (-1, -1):
+            print("Theo doesn't believe that this code isn't called")
+            return (False, entrance), (False, entry), True
+        elif entry == (-1, -1):
+            return (self.getDistance(entrance, pacman) < self.getDistance(entrance, ghost), entrance), (False, entry), True
+        else:
+            #print ((self.getDistance(entrance, pacman), self.getDistance(entrance, ghost), entrance, self.getDistance(entry, pacman),self.getDistance(entry, ghost)))
+            return (self.getDistance(entrance, pacman) < self.getDistance(entrance, ghost), entrance), (self.getDistance(entry, pacman) < self.getDistance(entry, ghost) , entry), True
+
+    def can_can_pacman_enter_coridor(self, pacman, ghost):
+        entrys_and_entrances = flatten([])
 
     def get_things(self):
         returnlist = []
-        layoutdata = self.layout.data
-        for w in range(self.layout.width):
-            for h in range(self.layout.heigth):
-                if not layoutdata[w][h] and self.is_corridor(layoutdata, w, h) and layoutdata[w][h] not in self.explored:
-                    entrance, lasttile = self.goto_entrance(layoutdata, w, h)
-                    coridorlist, exit = self.goto_exit(layoutdata, entrance, lasttile)
+        walls_data = self.walls.data
+        for x in range(self.walls.width):
+            for y in range(self.walls.height):
+                if not walls_data[x][y] and self.is_corridor((x, y)) and (x, y) not in self.explored:
+                    entrance, lasttile = self.goto_entrance((x, y))
+                    coridorlist, exit = self.goto_exit(entrance, lasttile)
                     for each in coridorlist:
                         self.explored.append(each)
                     returnlist.append((entrance, coridorlist, exit))
         self.corridors = returnlist
         return returnlist
 
-    def is_corridor(self, layoutdata, w, h):
-        walls_around_tile = 0
-        if layoutdata[w][h + 1]: walls_around_tile += 1
-        if layoutdata[w + 1][h]: walls_around_tile += 1
-        if layoutdata[w][h - 1]: walls_around_tile += 1
-        if layoutdata[w - 1][h]: walls_around_tile += 1
-        return walls_around_tile < 3
+    def get_neighbours(self, tile):
+        (x, y) = tile
+        neighbors = []
+        if not self.walls.data[x][y + 1]:
+            neighbors.append((x, y + 1))
+        if not self.walls.data[x + 1][y]:
+            neighbors.append((x + 1, y))
+        if not self.walls.data[x][y - 1]:
+            neighbors.append((x, y - 1))
+        if not self.walls.data[x - 1][y]:
+            neighbors.append((x - 1, y))
+        return neighbors
 
-    def goto_entrance(self, layout, w, h):
-        visited = []
-        while True:
-            if not layout[w][h+1] and (layout[w][h+1] not in visited):
-                if self.is_corridor(layout, w, h + 1):
-                        h += 1
-                        visited.append(layout, w, h + 1)
-                else:
-                        return (w, h + 1), (w, h)
-            elif not layout[w+1][h] and layout[w][h+1] not in visited:
-                    if self.is_corridor(layout, w + 1, h):
-                        w += 1
-                        visited.append(layout[w][h + 1])
-                    else:
-                        return (w + 1, h), (w, h)
-            elif not layout[w][h-1] and layout[w][h+1] not in visited:
-                    if self.is_corridor(layout, w, h - 1):
-                        h -= 1
-                        visited.append(layout[w][h + 1])
-                    else:
-                        return (w, h - 1), (w, h)
-            elif not layout[w-1][h] and layout[w][h+1] not in visited:
-                    if self.is_corridor(layout, w - 1, h):
-                        w -= 1
-                        visited.append(layout[w][h + 1])
-                    else:
-                        return (w - 1, h), (w, h)
+    def is_corridor(self, tile):
+        return self.get_neighbours(tile).__len__() < 3
 
+    def goto_entrance(self, tile):
+        visited = [tile]
+        end_visited = []
+        neighbors = self.get_neighbours(tile)
+        if not neighbors:
+            return (-1, -1), tile
+        last_tile = tile
+        tile = neighbors[0]
+        while self.is_corridor(tile):
+            visited.append(tile)
+            neighbors = [n for n in self.get_neighbours(tile) if n not in visited]
+            if not neighbors:
+                if tile not in end_visited:
+                    visited = [tile]
+                    last_tile = tile
+                    end_visited.append(tile)
+                else:
+                    return (-1, -1), tile
+            else:
+                last_tile = tile
+                tile = neighbors[0]
+        return tile, last_tile
 
-    def goto_exit(self, layoutdata, entrance, lasttile):
-        (w, h) = lasttile
-        visited = []
-        coridorlist = []
-        visited.append(layoutdata[entrance[0]][entrance[1]])
-        while (True):
-            if not layoutdata[w][h+1] and layoutdata[w][h+1] not in visited:
-                if self.is_corridor(layoutdata, w, h + 1):
-                    h += 1
-                    coridorlist.append((w, h))
-                    visited.append(layoutdata, w, h + 1)
-                else:
-                    return coridorlist, (w, h + 1)
-            elif not layoutdata[w+1][h] and layoutdata[w][h+1] not in visited:
-                if self.is_corridor(layoutdata, w + 1, h):
-                    w += 1
-                    coridorlist.append((w, h))
-                    visited.append(layoutdata[w][h + 1])
-                else:
-                    return coridorlist, (w + 1, h)
-            elif not layoutdata[w][h-1] and layoutdata[w][h+1] not in visited:
-                if self.is_corridor(layoutdata, w, h - 1):
-                    h -= 1
-                    coridorlist.append((w, h))
-                    visited.append(layoutdata[w][h + 1])
-                else:
-                    return coridorlist, (w, h - 1)
-            elif not layoutdata[w-1][h] and layoutdata[w][h+1] not in visited:
-                if self.is_corridor(layoutdata, w - 1, h):
-                    w -= 1
-                    coridorlist.append((w, h))
-                    visited.append(layoutdata[w][h + 1])
-                else:
-                    return coridorlist, (w - 1, h)
+    def goto_exit(self, entrance, tile):
+        visited = [entrance, tile]
+        corridor_list = [tile]
+        neighbors = [n for n in self.get_neighbours(tile) if n not in visited]
+        if not neighbors:
+            return corridor_list, (-1, -1)
+        tile = neighbors[0]
+        visited.remove(entrance)
+        while self.is_corridor(tile):
+            visited.append(tile)
+            corridor_list.append(tile)
+            neighbors = [n for n in self.get_neighbours(tile) if n not in visited]
+            if not neighbors:
+                return corridor_list, (-1, -1)
+            else:
+                tile = neighbors[0]
+        return corridor_list, tile
+
 
 
 class CompetitionAgent(Agent):
@@ -147,7 +153,8 @@ class CompetitionAgent(Agent):
 
         # useful function to find functions you've defined elsewhere..
         # self.usefulFunction = util.lookup(usefulFn, globals())
-        self.getDistance = self.distancer.getDistance
+        self.get_distance = None
+
         self.next_food = None
         self.food_list = []
 
@@ -160,12 +167,14 @@ class CompetitionAgent(Agent):
         between each pair of positions, so your agents can use:
         self.distancer.getDistance(p1, p2)
         """
-        self.corridors = Corridors(game_state.data.layout)
-        self.corridors.get_things()
-        for c in self.corridors.corridors:
-            print(c)
+
         self.distancer = distanceCalculator.Distancer(game_state.data.layout)
         self.distancer.getMazeDistances()
+        self.corridors = Corridors(game_state.data.layout.walls, self.distancer)
+        self.corridors.get_things()
+        #for c in self.corridors.corridors:
+        #    print(c)
+        self.get_distance = self.distancer.getDistance
         # get_tunnels(game_state.data.layout)
         food = game_state.getFood()
         self.food_list = []
@@ -303,6 +312,7 @@ class MyPacmanAgent(CompetitionAgent):
             action in game_state.getLegalActions(0)]
         best_actions = [action[0] for action in evaluation_scores if
                         action[1] == max([score[1] for score in evaluation_scores])]
+        # print ((game_state.getPacmanPosition(),evaluation_scores, best_actions))
         return best_actions[random.choice(range(best_actions.__len__()))]
 
     def evaluationFunction(self, state):
@@ -312,18 +322,18 @@ class MyPacmanAgent(CompetitionAgent):
         pacman_pos = state.getPacmanPosition()
         food = state.getFood()
         ghost_states = state.getGhostStates()
-        ghost_distance = [self.getDistance(pacman_pos, ghost.configuration.pos) for ghost in ghost_states if
+        ghost_distance = [self.get_distance(pacman_pos, ghost.configuration.pos) for ghost in ghost_states if
                           ghost.scaredTimer == 0]
-        scared_distance = [self.getDistance(pacman_pos, ghost.configuration.pos) for ghost in ghost_states if
+        scared_distance = [self.get_distance(pacman_pos, ghost.configuration.pos) for ghost in ghost_states if
                            ghost.scaredTimer != 0]
-        capsule_distance = [self.getDistance(pacman_pos, capsule) for capsule in state.getCapsules()]
+        capsule_distance = [self.get_distance(pacman_pos, capsule) for capsule in state.getCapsules()]
         food_list = []
 
         for h in range(food.height):
             for w in range(food.width):
                 if food[w][h]:
                     food_list.append((w, h))
-        food_distance = [self.getDistance(pacman_pos, food) for food in food_list]
+        food_distance = [self.get_distance(pacman_pos, food) for food in food_list]
         if state.hasFood(pacman_pos[0], pacman_pos[1]):
             food_distance.append(0)
         if not ghost_distance:
@@ -349,6 +359,8 @@ class MyPacmanAgent(CompetitionAgent):
                            ghost.scaredTimer != 0]
         capsule_distance = [self.distancer.getDistance(pacman_pos, capsule) for capsule in
                             currentgamestate.getCapsules()]
+        ghost_escapes = [self.corridors.time_to_get_out_corridor(pacman_pos, ghost.configuration.pos) for ghost in state.getGhostStates() if ghost.scaredTimer == 0]
+        escape_through_exit_from_ghosts = [(entrance[0], entry[0]) for (entrance, entry, in_corridor) in ghost_escapes if in_corridor]
         food_list = []
 
         for h in range(food.height):
@@ -364,8 +376,8 @@ class MyPacmanAgent(CompetitionAgent):
             capsule_distance.append(0)
             scared_distance.append(0)
         # print ((scared_distance,not scared_distance))
-        # if scared_distance:
-        # capsule_distance = [-capsule for capsule in capsule_distance]
+        #if scared_distance:
+        #    capsule_distance = [-capsule for capsule in capsule_distance]
         if not scared_distance or scared_distance.__len__() < [
             self.distancer.getDistance(prevstate.getPacmanPosition(), ghost.configuration.pos) for ghost in
             prevstate.getGhostStates() if ghost.scaredTimer != 0].__len__():
@@ -374,6 +386,19 @@ class MyPacmanAgent(CompetitionAgent):
             return -float("inf")
         if not food_distance:
             return float("inf")
+        if prevstate.getCapsules().__len__() > state.getCapsules().__len__():
+            return float("inf")
+        if escape_through_exit_from_ghosts:
+            entrance = ghost_escapes[0][0][1]
+            entry = ghost_escapes[0][1][1]
+            a = [entrance for (entrance, entry) in escape_through_exit_from_ghosts if not entrance] and True
+            b = [entry for (entrance, entry) in escape_through_exit_from_ghosts if not entry] and True
+            if  a and  b and not self.corridors.is_corridor(prevstate.getPacmanPosition()):
+                return -float("inf")
+            #if a and entry[0] >= 0:
+            #    return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - self.get_distance(entry, pacman_pos)
+            #elif b and entrance[0] >= 0:
+            #    return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - self.get_distance(entrance, pacman_pos)
         #print ((prevstate.getPacmanPosition(), - min(food_distance)  -10* min(capsule_distance) - 20*min(scared_distance),action,(min(food_distance),min(capsule_distance),min(scared_distance),state.getScore())))
         return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore()
 
