@@ -367,9 +367,9 @@ class MyPacmanAgent(CompetitionAgent):
             if a and b and not self.corridors.is_corridor(prevstate.getPacmanPosition()):
                 return -10000 - stop_value
             if not a and not b:
-                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - stop_value + get_out_of_corridor_value
+                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - stop_value
                 return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - 2*self.get_distance(entrance, pacman_pos) - stop_value+ get_out_of_corridor_value
-        return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - stop_value + get_out_of_corridor_value
+        return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - stop_value
 
 
 # MyPacmanAgent=BaselineAgent
