@@ -20,6 +20,7 @@ class SeekerClassifier:
 
 
 class Corridors:
+    "a class that computes all the corridors in a layout"
     def __init__(self, walls, distancer):
         self.walls = walls
         self.explored = []
@@ -28,38 +29,41 @@ class Corridors:
         self.getDistance = self.distancer.getDistance
 
     def time_to_get_out_corridor(self, pacman, ghost):
-        "returns true if pacman can escape from a ghost through an entrance or exit"
-        temp = [(entrance, entry) for (entrance, corridors, entry) in self.corridors if pacman in corridors]
-        if not temp:
+        """returns true if pacman can escape from a ghost through an entrance or exit.
+            it returns 2 tuples with a boolean and a position of an entrance.
+            if that boolean is true then can pacman escape trough the exit from the ghost.
+            and it returns a boolean that is true if pacman is in a corridor.
+        """
+        temp = [(entrance, entry) for (entrance, corridors, entry) in self.corridors if pacman in corridors]  # a list with coridors where pacman is in.
+        if not temp:  # if there are no items in temp then pacman isn't in a corridor
             return (True, (-2, -2)), (True, (-2, -2)), False
         (entrance, entry) = temp[0]
-        if entrance == (-1, -1):
+        if entrance == (-1, -1):    # there are no exits so pacman can't escape
             print("Theo doesn't believe that this code isn't called")
             return (False, entrance), (False, entry), True
-        elif entry == (-1, -1):
+        elif entry == (-1, -1):  # the corridor has a dead end so pacman can only escape on one exit
             return (self.getDistance(entrance, pacman) < self.getDistance(entrance, ghost), entrance), (False, entry), True
-        else:
-            #print ((self.getDistance(entrance, pacman), self.getDistance(entrance, ghost), entrance, self.getDistance(entry, pacman),self.getDistance(entry, ghost)))
+        else:  # a corridor has 2 ends so both need to be checked.
             return (self.getDistance(entrance, pacman) < self.getDistance(entrance, ghost), entrance), (self.getDistance(entry, pacman) < self.getDistance(entry, ghost) , entry), True
 
-    def can_can_pacman_enter_coridor(self, pacman, ghost):
-        entrys_and_entrances = flatten([])
-
-    def get_things(self):
-        returnlist = []
+    def compute_corridors(self):
+        # returns a list with all the corridors and there entrances
+        # (entrance1, list_of_tiles, entrance2)
+        return_list = []
         walls_data = self.walls.data
         for x in range(self.walls.width):
             for y in range(self.walls.height):
                 if not walls_data[x][y] and self.is_corridor((x, y)) and (x, y) not in self.explored:
-                    entrance, lasttile = self.goto_entrance((x, y))
-                    coridorlist, exit = self.goto_exit(entrance, lasttile)
-                    for each in coridorlist:
+                    entrance, last_tile = self.goto_entrance((x, y))
+                    corridor_list, entry = self.goto_exit(entrance, last_tile)
+                    for each in corridor_list:
                         self.explored.append(each)
-                    returnlist.append((entrance, coridorlist, exit))
-        self.corridors = returnlist
-        return returnlist
+                    return_list.append((entrance, corridor_list, entry))
+        self.corridors = return_list
+        return return_list
 
     def get_neighbours(self, tile):
+        """returns the neighbours of a tile"""
         (x, y) = tile
         neighbors = []
         if not self.walls.data[x][y + 1]:
@@ -73,9 +77,11 @@ class Corridors:
         return neighbors
 
     def is_corridor(self, tile):
+        """returns true if a tile has less then 3 neighbours"""
         return self.get_neighbours(tile).__len__() < 3
 
     def goto_entrance(self, tile):
+        """go to the entrance and return the entrance and the last tile before the corridor"""
         visited = [tile]
         end_visited = []
         neighbors = self.get_neighbours(tile)
@@ -99,6 +105,8 @@ class Corridors:
         return tile, last_tile
 
     def goto_exit(self, entrance, tile):
+        """" move from the entrance to the end of the corridor and return the ending
+         and a list of tiles in the corridor"""
         visited = [entrance, tile]
         corridor_list = [tile]
         neighbors = [n for n in self.get_neighbours(tile) if n not in visited]
@@ -155,9 +163,6 @@ class CompetitionAgent(Agent):
         # self.usefulFunction = util.lookup(usefulFn, globals())
         self.get_distance = None
 
-        self.next_food = None
-        self.food_list = []
-
     def registerInitialState(self, game_state):
         """
         This method handles the initial setup of the
@@ -171,20 +176,8 @@ class CompetitionAgent(Agent):
         self.distancer = distanceCalculator.Distancer(game_state.data.layout)
         self.distancer.getMazeDistances()
         self.corridors = Corridors(game_state.data.layout.walls, self.distancer)
-        self.corridors.get_things()
-        #for c in self.corridors.corridors:
-        #    print(c)
+        self.corridors.compute_corridors()
         self.get_distance = self.distancer.getDistance
-        # get_tunnels(game_state.data.layout)
-        food = game_state.getFood()
-        self.food_list = []
-        for h in range(food.height):
-            for w in range(food.width):
-                if food[w][h]:
-                    self.food_list.append((w, h))
-        foods = [(self.distancer.getDistance(game_state.getPacmanPosition(), food), food) for food in self.food_list]
-        close_foods = [f[1] for f in foods if f[0] == min(food[0] for food in foods)]
-        self.next_food = close_foods[random.choice(range(close_foods.__len__()))]
         # comment this out to forgo maze distance computation and use manhattan distances
         # self.distancer.getMazeDistances()
 
@@ -314,37 +307,42 @@ class MyPacmanAgent(CompetitionAgent):
                         action[1] == max([score[1] for score in evaluation_scores])]
         return best_actions[random.choice(range(best_actions.__len__()))]
 
-    def evaluationFunction(self, prevstate, state, action):
+    def evaluationFunction(self, prevstate, next_state, action):
         """
-        A very poor evsaluation function. You can do better!
+        Our evaluation function is based on the following things:
+            if a Ghost is next to pacman move away from it.
+            if there is a there are scared ghosts then dont pick up the capsules
+            if pacman cant get out of a corridor then dont go into it.
+            and of course try to get the most points!
+
         """
         stop_value = 0
         if action == Directions.STOP: # give the Stop Action a lower evaluation function
             stop_value = 20
-        currentgamestate = state
-        pacman_pos = currentgamestate.getPacmanPosition()
-        food = currentgamestate.getFood()
-        ghost_states = currentgamestate.getGhostStates()
+        pacman_pos = next_state.getPacmanPosition()
+        food = next_state.getFood()
+        # create some usefull lists
+        ghost_states = next_state.getGhostStates()
         ghost_distance = [self.distancer.getDistance(pacman_pos, ghost.configuration.pos) for ghost in ghost_states if
-                          ghost.scaredTimer == 0]
+                          ghost.scaredTimer == 0]  # a list with all the distances between pacman and non-scared ghosts
         scared_distance = [self.distancer.getDistance(pacman_pos, ghost.configuration.pos) for ghost in ghost_states if
-                           ghost.scaredTimer != 0]
+                           ghost.scaredTimer != 0]  # a list with all the distances between pacman and scared ghosts
         capsule_distance = [self.distancer.getDistance(pacman_pos, capsule) for capsule in
-                            currentgamestate.getCapsules()]
-        ghost_escapes = [self.corridors.time_to_get_out_corridor(pacman_pos, ghost.configuration.pos) for ghost in state.getGhostStates() if ghost.scaredTimer == 0]
-        escape_through_exit_from_ghosts = [(entrance[0], entry[0]) for (entrance, entry, in_corridor) in ghost_escapes if in_corridor]
-        food_list = []
-
+                            next_state.getCapsules()]  # a list with all the distances between pacman and the capsules
+        ghost_escapes = [self.corridors.time_to_get_out_corridor(pacman_pos, ghost.configuration.pos) for ghost in next_state.getGhostStates() if ghost.scaredTimer == 0]  # a list with the output of time_to_get_out_corridor for all ghosts
+        escape_through_exit_from_ghosts = [(entrance[0], entry[0]) for (entrance, entry, in_corridor) in ghost_escapes if in_corridor]  # a list with booleans if can escape through an exit from a ghost.  empty if pacman doesn't move into a corridor
+        food_list = []  # a list with the positions of all foods.
         for h in range(food.height):
             for w in range(food.width):
                 if food[w][h]:
                     food_list.append((w, h))
-        food_distance = [self.distancer.getDistance(pacman_pos, food) for food in food_list]
-        if prevstate.getScore() < currentgamestate.getScore():
+        food_distance = [self.distancer.getDistance(pacman_pos, food) for food in food_list] # a list with all the distances between pacman and the foods
+        # some fixing in the lists.
+        if prevstate.getScore() < next_state.getScore(): # if pacman is on food the minimum distance is 0
             food_distance.append(0)
-        if not ghost_distance:
+        if not ghost_distance: 
             ghost_distance.append(float("inf"))
-        if not capsule_distance or currentgamestate.getCapsules().__len__() < prevstate.getCapsules().__len__():
+        if not capsule_distance or next_state.getCapsules().__len__() < prevstate.getCapsules().__len__():
             capsule_distance.append(0)
             scared_distance.append(0)
         if not scared_distance or scared_distance.__len__() < [
@@ -353,23 +351,25 @@ class MyPacmanAgent(CompetitionAgent):
             scared_distance.append(0)
         if min(ghost_distance) < 2:
             return -10001
-        if not food_distance:
+        if not food_distance: # similar to is win
             return float("inf")
-        if prevstate.getCapsules().__len__() > state.getCapsules().__len__():
+        
+        # the actual function
+        if prevstate.getCapsules().__len__() > next_state.getCapsules().__len__():
             if [self.distancer.getDistance(pacman_pos, ghost.configuration.pos) for ghost in prevstate.getGhostStates() if
                            ghost.scaredTimer != 0]:
                 return -1000 - stop_value
             else:
                 return float("inf")
         if escape_through_exit_from_ghosts:
-            a = [entrance for (entrance, entry) in escape_through_exit_from_ghosts if not entrance] and True
-            b = [entry for (entrance, entry) in escape_through_exit_from_ghosts if not entry] and True
-            if a and b and not self.corridors.is_corridor(prevstate.getPacmanPosition()):
-                return -10000 - stop_value
-            if not a and not b:
-                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - stop_value
-                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - 2*self.get_distance(entrance, pacman_pos) - stop_value+ get_out_of_corridor_value
-        return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + state.getScore() - stop_value
+            entrance_not_safe = [entrance for (entrance, entry) in escape_through_exit_from_ghosts if not entrance] # empty if safe
+            entry_not_safe = [entry for (entrance, entry) in escape_through_exit_from_ghosts if not entry] # empty if safe
+            if entrance_not_safe and entry_not_safe and not self.corridors.is_corridor(prevstate.getPacmanPosition()):
+                return -10000 - stop_value  # if it isn't saf don't go there pacman.
+            if not entrance_not_safe and not entry_not_safe:
+                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + next_state.getScore() - stop_value
+                return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + next_state.getScore() - 2 * self.get_distance(entrance, pacman_pos) - stop_value+ get_out_of_corridor_value
+        return - min(food_distance) - 10 * min(capsule_distance) - 20 * min(scared_distance) + next_state.getScore() - stop_value
 
 
 # MyPacmanAgent=BaselineAgent

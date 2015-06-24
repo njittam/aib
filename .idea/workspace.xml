@@ -9,6 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="85484c1e-645d-401f-bfab-51dcbcae6e4a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task7/6-contest/competitionAgents.py" afterPath="$PROJECT_DIR$/task7/6-contest/competitionAgents.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task7/6-contest/leaderboard.html" afterPath="$PROJECT_DIR$/task7/6-contest/leaderboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="aib.iws" />
@@ -76,8 +77,8 @@
       <file leaf-file-name="competitionAgents.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/task7/6-contest/competitionAgents.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8891304" vertical-offset="5557" max-vertical-offset="6477">
-              <caret line="375" column="18" selection-start-line="375" selection-start-column="18" selection-end-line="375" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.7671233" vertical-offset="5786" max-vertical-offset="6477">
+              <caret line="370" column="131" selection-start-line="370" selection-start-column="131" selection-end-line="370" selection-end-column="131" />
               <folding>
                 <element signature="e#419#467#0" expanded="true" />
               </folding>
@@ -812,7 +813,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435170901185</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="werkende versie voor contest! v2">
+      <created>1435170957105</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1435170957105</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -846,7 +853,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32898173" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="261" y="175" width="551" height="725" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930845" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2637131" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="559" y="607" width="428" height="278" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2637131" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="559" y="607" width="428" height="278" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930845" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10208333" sideWeight="0.49913344" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32805908" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -900,7 +907,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="theos first commit" />
     <MESSAGE value="opdracht 1 is klaar" />
     <MESSAGE value="opdracht 1 en 2 klaar" />
     <MESSAGE value="opdracht 3 klaar" />
@@ -925,7 +931,8 @@
     <MESSAGE value="code theo syntax goed" />
     <MESSAGE value="code met corriddors" />
     <MESSAGE value="werkende versie voor contest!" />
-    <option name="LAST_COMMIT_MESSAGE" value="werkende versie voor contest!" />
+    <MESSAGE value="werkende versie voor contest! v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="werkende versie voor contest! v2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1393,8 +1400,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/task7/6-contest/competitionAgents.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8891304" vertical-offset="5557" max-vertical-offset="6477">
-          <caret line="375" column="18" selection-start-line="375" selection-start-column="18" selection-end-line="375" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.7671233" vertical-offset="5786" max-vertical-offset="6477">
+          <caret line="370" column="131" selection-start-line="370" selection-start-column="131" selection-end-line="370" selection-end-column="131" />
           <folding>
             <element signature="e#419#467#0" expanded="true" />
           </folding>
